@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PaddockListItem from './PaddockListItem';
 
 class PaddockList extends Component {
   render() {
@@ -6,8 +7,8 @@ class PaddockList extends Component {
       <div className="paddock-list">
         <h4>Paddock List:</h4>
           <ul>
-            <li>paddock1</li>
-            <li>paddock2</li>
+            <PaddockListItem/>
+            <PaddockListItem/>
           </ul>
       </div>
     );
