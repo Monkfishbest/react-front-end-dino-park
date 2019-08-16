@@ -19,8 +19,9 @@ class ParkContainer extends Component {
         <h2>This is a park container</h2>
       <Router>
         <React.Fragment>
-        <Switch>
         <NavBar/>
+        <Switch>
+
         <Route path="/home" component={Home}/>
         </Switch>
         </React.Fragment>
