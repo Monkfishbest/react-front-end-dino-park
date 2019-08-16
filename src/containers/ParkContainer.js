@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Map from '../components/Map.js';
 
 class ParkContainer extends Component {
 
