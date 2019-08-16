@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import DinosaurListItem from './DinosaurListItem'
 
 class DinosaurList extends Component {
   render() {
@@ -6,8 +7,7 @@ class DinosaurList extends Component {
       <div className="dinosaur-list">
         <h4>Dinosaur List:</h4>
           <ul>
-            <li>dinosaur</li>
-            <li>dinosaur</li>
+            <DinosaurListItem/>
           </ul>
       </div>
     );
