@@ -1,4 +1,9 @@
+import NavBar from "../components/NavBar";
+import Home from "../components/Home";
 import React, { Component } from "react";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom"
+
+
 
 class ParkContainer extends Component {
 
@@ -12,7 +17,15 @@ class ParkContainer extends Component {
     return (
       <div className="park-container">
         <h2>This is a park container</h2>
-      </div>
+      <Router>
+        <React.Fragment>
+        <Switch>
+        <NavBar/>
+        <Route path="/home" component={Home}/>
+        </Switch>
+        </React.Fragment>
+      </Router>
+</div>
     );
   }
 }

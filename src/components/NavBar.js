@@ -4,13 +4,7 @@ import {Link} from 'react-router-dom';
 const NavBar = () => (
   <ul>
     <li>
-      <Link to="/">Home</Link>
-    </li>
-    <li>
-      <Link to="/about">About</Link>
-    </li>
-    <li>
-      <Link to="/FAQ">FAQ</Link> 
+      <Link to="/home">Home</Link>
     </li>
   </ul>
 )
