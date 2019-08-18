@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import TransferButton from "./TransferButton"
 import AddDinosaurButton from "./AddDinosaurButton"
 import AddPaddockButton from "./AddPaddockButton"
+import FeedButton from "./FeedButton"
 
 class ButtonList extends Component {
   render() {
@@ -10,6 +11,7 @@ class ButtonList extends Component {
         <TransferButton/>
         <AddDinosaurButton/>
         <AddPaddockButton/>
+        <FeedButton/>
       </div>
     );
   }
