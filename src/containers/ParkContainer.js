@@ -1,7 +1,7 @@
 import NavBar from "../components/NavBar";
 import Home from "../components/Home";
 import React, { Component } from "react";
-import Map from '../components/Map.js';
+import Map from '../components/map/Map.js';
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom"
 
 class ParkContainer extends Component {
