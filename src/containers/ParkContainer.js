@@ -3,6 +3,7 @@ import Home from '../components/Home';
 import Map from '../components/Map';
 import Faq from '../components/FAQ';
 import About from '../components/About';
+import DinosaurList from '../components/paddock/DinosaurList';
 import ErrorPage from '../components/ErrorPage';
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom"
 import React, { Component } from "react";
@@ -21,7 +22,7 @@ class ParkContainer extends Component {
     fetch(url)
     .then(res => res.json())
     .then(returnedDinos => this.setState({listOfDinos: returnedDinos}))
-    .catch(err => console.error(eer))
+    .catch(err => console.error(err))
   }
 
   render() {
@@ -40,7 +41,7 @@ class ParkContainer extends Component {
         </Switch>
         </React.Fragment>
       </Router>
-<DinosaurList dinoList={this.state.listOfDinos}/> 
+<DinosaurList dinoList={this.state.listOfDinos}/>
 </div>
     );
   }
