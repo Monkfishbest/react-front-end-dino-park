@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import DinosaurList from './DinosaurList';
+import ButtonList from '../buttons/ButtonList';
 
 class Paddock extends Component {
   render() {
@@ -7,6 +8,7 @@ class Paddock extends Component {
       <div className="paddock">
         <h4>i am the paddock component</h4>
         <DinosaurList/>
+        <ButtonList/>
       </div>
     );
   }
