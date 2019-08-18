@@ -3,6 +3,7 @@ import Home from '../components/Home';
 import Map from '../components/Map';
 import Faq from '../components/FAQ';
 import About from '../components/About';
+import ErrorPage from '../components/ErrorPage';
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom"
 import React, { Component } from "react";
 
@@ -26,6 +27,7 @@ class ParkContainer extends Component {
         <Route path="/map" component={Map}/>
         <Route path="/About" component={About}/>
         <Route path="/FAQ" component={Faq}/>
+        <Route component={ErrorPage}/>
         </Switch>
         </React.Fragment>
       </Router>
