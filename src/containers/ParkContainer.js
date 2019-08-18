@@ -40,7 +40,7 @@ class ParkContainer extends Component {
         </Switch>
         </React.Fragment>
       </Router>
-
+<DinosaurList dinoList={this.state.listOfDinos}/> 
 </div>
     );
   }
