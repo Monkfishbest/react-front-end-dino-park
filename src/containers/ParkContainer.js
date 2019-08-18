@@ -2,7 +2,7 @@ import NavBar from '../components/NavBar';
 import Home from '../components/Home';
 import Map from '../components/Map';
 import Faq from '../components/FAQ';
-import About from '...components/About';
+import About from '../components/About';
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom"
 import React, { Component } from "react";
 
