@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PaddockList from './PaddockList';
+import ButtonList from '../buttons/ButtonList'
 
 class Map extends Component {
   render() {
@@ -7,6 +8,7 @@ class Map extends Component {
       <div className="map">
         <h4>i am the map component</h4>
         <PaddockList/>
+        <ButtonList/>
       </div>
     );
   }
