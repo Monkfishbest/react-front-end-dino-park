@@ -1,18 +1,18 @@
 import React, { Component } from "react";
 import PaddockListItem from './PaddockListItem';
 
-class PaddockList extends Component {
-  render() {
+const PaddockList = (props) => {
+  const paddockNodes = props.paddockList.map((paddock, index) => {
     return (
+      <PaddockListItem key={index} paddock={paddock}></PaddockListItem>
+    )
+  })
+
+    return(
       <div className="paddock-list">
-        <h4>Paddock List:</h4>
-          <ul>
-            <PaddockListItem/>
-            <PaddockListItem/>
-          </ul>
+        {paddockNodes}
       </div>
     );
-  }
 }
 
 export default PaddockList;
