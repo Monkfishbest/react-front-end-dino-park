@@ -1,6 +1,5 @@
 import NavBar from '../components/NavBar';
 import Home from '../components/Home';
-import Map from '../components/map/Map';
 import Faq from '../components/FAQ';
 import About from '../components/About';
 import DinosaurList from '../components/paddock/DinosaurList';
@@ -34,7 +33,6 @@ class ParkContainer extends Component {
         <NavBar/>
         <Switch>
         <Route exact path={["/home", "/"]} component={Home}/>
-        <Route path="/map" component={Map}/>
         <Route path="/About" component={About}/>
         <Route path="/FAQ" component={Faq}/>
         <Route component={ErrorPage}/>
