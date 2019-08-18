@@ -3,6 +3,7 @@ import Home from '../components/Home';
 import Faq from '../components/FAQ';
 import About from '../components/About';
 import DinosaurList from '../components/paddock/DinosaurList';
+import PaddockList from '../components/map/PaddockList';
 import ErrorPage from '../components/ErrorPage';
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom"
 import React, { Component } from "react";
@@ -12,7 +13,8 @@ class ParkContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      listOfDinos: []
+      listOfDinos: [],
+      listOfPaddocks: []
     };
   }
 
@@ -20,7 +22,7 @@ class ParkContainer extends Component {
     const url = 'PLACEHOLDER-PLACEHOLDER-PLACEHOLDER'
     fetch(url)
     .then(res => res.json())
-    .then(returnedDinos => this.setState({listOfDinos: returnedDinos}))
+    .then(returnedDinos => this.setState({listOfDinos: returnedDinos, listOfPaddocks: returnedDinos}))
     .catch(err => console.error(err))
   }
 
@@ -38,6 +40,7 @@ class ParkContainer extends Component {
         <Route component={ErrorPage}/>
         </Switch>
         <DinosaurList dinoList={this.state.listOfDinos}/>
+        <PaddockList paddockList={this.state.listOfPaddocks}/>
         </React.Fragment>
       </Router>
 </div>
