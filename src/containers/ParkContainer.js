@@ -33,15 +33,15 @@ class ParkContainer extends Component {
         <React.Fragment>
         <NavBar/>
         <Switch>
-        <Route path="/home" component={Home}/>
+        <Route exact path={["/home", "/"]} component={Home}/>
         <Route path="/map" component={Map}/>
         <Route path="/About" component={About}/>
         <Route path="/FAQ" component={Faq}/>
         <Route component={ErrorPage}/>
         </Switch>
+        <DinosaurList dinoList={this.state.listOfDinos}/>
         </React.Fragment>
       </Router>
-<DinosaurList dinoList={this.state.listOfDinos}/>
 </div>
     );
   }
