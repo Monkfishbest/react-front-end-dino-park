@@ -12,7 +12,16 @@ class ParkContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      listOfDinos: []
     };
+  }
+
+  componentDidMount(){
+    const url = 'PLACEHOLDER-PLACEHOLDER-PLACEHOLDER'
+    fetch(url)
+    .then(res => res.json())
+    .then(returnedDinos => this.setState({listOfDinos: returnedDinos}))
+    .catch(err => console.error(eer))
   }
 
   render() {
