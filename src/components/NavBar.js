@@ -7,12 +7,16 @@ const NavBar = () => (
       <Link to="/home">Home</Link>
     </li>
     <li>
-      <Link to="FAQ">FAQ</Link>
+      <Link to="/map">Dino Map</Link>
     </li>
     <li>
-
-    </li> 
+      <Link to="/about">About</Link>
+    </li>
+    <li>
+      <Link to="FAQ">FAQ</Link>
+    </li>
   </ul>
 )
+
 
 export default NavBar;
