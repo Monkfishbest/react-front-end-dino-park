@@ -3,6 +3,7 @@ import Home from "../components/Home";
 import React, { Component } from "react";
 import Map from '../components/map/Map.js';
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom"
+import ButtonList from '../components/buttons/ButtonList'
 
 class ParkContainer extends Component {
 
@@ -25,6 +26,8 @@ class ParkContainer extends Component {
         </Switch>
         </React.Fragment>
       </Router>
+
+      <ButtonList/>
 </div>
     );
   }
