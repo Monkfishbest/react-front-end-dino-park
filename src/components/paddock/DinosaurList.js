@@ -10,7 +10,6 @@ const DinosaurList = (props) => {
 
     return(
       <div className="dinosaur-list">
-        <h4>Dinosaur List:</h4>
         {dinoNodes}
       </div>
     );

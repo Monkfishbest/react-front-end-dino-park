@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import PaddockList from './PaddockList';
 import ButtonList from '../buttons/ButtonList'
 
 class Map extends Component {
@@ -7,7 +6,6 @@ class Map extends Component {
     return (
       <div className="map">
         <h4>i am the map component</h4>
-        <PaddockList/>
         <ButtonList/>
       </div>
     );
