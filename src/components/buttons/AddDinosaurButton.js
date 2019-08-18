@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './NavBar.css';
 
 class AddDinosaurButton extends Component {
   render() {
