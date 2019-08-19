@@ -26,8 +26,9 @@ class PaddockContainer extends Component {
   // }
 
   handleAddPaddockFormSubmit({paddockName, paddockType}) {
-      this.setState({ paddockName: paddockName,
-                      paddockType: paddockType})
+    this.setState({ paddockName: paddockName,
+      paddockType: paddockType
+    })
   }
 
   handleAddDinosaurFormSubmit({newDino}) {
