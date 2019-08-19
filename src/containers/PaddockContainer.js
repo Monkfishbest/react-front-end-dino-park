@@ -12,13 +12,13 @@ class PaddockContainer extends Component {
       };
     }
 
-  componentDidMount(){
-    const url = 'PLACEHOLDER-PLACEHOLDER-PLACEHOLDER'
-    fetch(url)
-    .then(res => res.json())
-    .then(returnedDinos => this.setState({listOfDinos: returnedDinos, listOfPaddocks: returnedDinos}))
-    .catch(err => console.error(err))
-  }
+  // componentDidMount(){
+  //   const url = 'PLACEHOLDER-PLACEHOLDER-PLACEHOLDER'
+  //   fetch(url)
+  //   .then(res => res.json())
+  //   .then(returnedDinos => this.setState({listOfDinos: returnedDinos, listOfPaddocks: returnedDinos}))
+  //   .catch(err => console.error(err))
+  // }
 
 
   render(){

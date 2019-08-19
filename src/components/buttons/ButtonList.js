@@ -11,7 +11,7 @@ class ButtonList extends Component {
         <TransferButton/>
         <AddDinosaurButton/>
         <AddPaddockButton/>
-        <FeedButton/>
+        <FeedButton url={"http://localhost:8080/dinosaurs/feed"}/>
       </div>
     );
   }
