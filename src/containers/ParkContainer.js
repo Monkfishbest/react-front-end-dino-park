@@ -2,9 +2,10 @@ import NavBar from '../components/NavBar';
 import Home from '../components/Home';
 import Faq from '../components/FAQ';
 import About from '../components/About';
+import PaddockContainer from './PaddockContainer'
 import DinosaurList from '../components/paddock/DinosaurList';
 import ErrorPage from '../components/ErrorPage';
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom"
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import React, { Component } from "react";
 
 class ParkContainer extends Component {
@@ -26,8 +27,9 @@ class ParkContainer extends Component {
         <NavBar/>
         <Switch>
         <Route exact path={["/home", "/"]} component={Home}/>
-        <Route path="/About" component={About}/>
-        <Route path="/FAQ" component={Faq}/>
+        <Route path="/about" component={About}/>
+        <Route path="/park-map" component={PaddockContainer}/>
+        <Route path="/faq" component={Faq}/>
         <Route component={ErrorPage}/>
         </Switch>
         <DinosaurList dinoList={this.state.listOfDinos}/>
