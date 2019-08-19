@@ -15,13 +15,13 @@ class PaddockContainer extends Component {
       this.handleAddPaddockFormSubmit = this.handleAddPaddockFormSubmit.bind(this);
     }
 
-  componentDidMount(){
-    const url = 'PLACEHOLDER-PLACEHOLDER-PLACEHOLDER'
-    fetch(url)
-    .then(res => res.json())
-    .then(returnedDinos => this.setState({listOfDinos: returnedDinos, listOfPaddocks: returnedDinos}))
-    .catch(err => console.error(err))
-  }
+  // componentDidMount(){
+  //   const url = 'PLACEHOLDER-PLACEHOLDER-PLACEHOLDER'
+  //   fetch(url)
+  //   .then(res => res.json())
+  //   .then(returnedDinos => this.setState({listOfDinos: returnedDinos, listOfPaddocks: returnedDinos}))
+  //   .catch(err => console.error(err))
+  // }
 
   handleAddPaddockFormSubmit({paddockName, paddockType}) {
       this.setState({ paddockName: paddockName,

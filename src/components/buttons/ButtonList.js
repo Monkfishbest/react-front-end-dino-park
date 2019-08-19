@@ -13,7 +13,7 @@ class ButtonList extends Component {
         <TransferButton/>
         <AddDinosaurButton/>
         <AddPaddockButton onAddPaddockFormSubmit={this.props.onAddPaddockFormSubmit} />
-        <FeedButton/>
+        <FeedButton url={"http://localhost:8080/dinosaurs/feed"}/>
       </div>
     );
   }
