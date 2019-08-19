@@ -10,14 +10,13 @@ class AddDinosaurForm extends Component {
       fullnessLevel: null,
       type: null,
       paddock: null
-
     };
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleIsHerbivoreChange = this.handleIsHerbivoreChange.bind(this);
     this.handleFullnessLevelChange = this.handleFullnessLevelChange.bind(this);
     this.handleTypeChange = this.handleTypeChange.bind(this);
     this.handlePaddockChange = this.handlePaddockChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleAddDinosaurFormSubmit = this.handleAddDinosaurFormSubmit.bind(this);
   }
 
   handleNameChange(event){
@@ -40,12 +39,10 @@ class AddDinosaurForm extends Component {
     this.setState({paddock: event.target.value})
   }
 
-  handleSubmit(event) {
+  handleAddDinosaurFormSubmit(event) {
+    event.preventDefault();
     const newDino = this.state;
-    fetch('/api/form-submit-url', {
-      method: 'POST',
-      body: newDino,
-    });
+    this.props.onAddDinosaurFormSubmit({newDino: newDino})
     this.setState({name: "", isHerbivore: null, fullnessLevel: null, type: null, paddock: null})
   }
 
@@ -53,7 +50,7 @@ class AddDinosaurForm extends Component {
     return (
       <div className="add-dinosaur-form">
         <h2>Add A Dinosaur:</h2>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleAddDinosaurFormSubmit}>
             <label>Name:</label>
             <input type="text" onChange={this.handleNameChange} value={this.state.name}/>
           <br/>

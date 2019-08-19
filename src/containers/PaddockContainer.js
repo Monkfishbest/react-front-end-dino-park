@@ -10,9 +10,11 @@ class PaddockContainer extends Component {
       this.state = {
         listOfPaddocks: [],
         paddockName: '',
-        paddockType: ''
+        paddockType: '',
+        newDino: {}
       };
       this.handleAddPaddockFormSubmit = this.handleAddPaddockFormSubmit.bind(this);
+      this.handleAddDinosaurFormSubmit = this.handleAddDinosaurFormSubmit.bind(this);
     }
 
   // componentDidMount(){
@@ -28,13 +30,17 @@ class PaddockContainer extends Component {
                       paddockType: paddockType})
   }
 
+  handleAddDinosaurFormSubmit({newDino}) {
+    this.setState({newDino: newDino})
+  }
+
 
   render(){
     return (
       <div className="PaddockContainer">
       <h3>This is a paddock container</h3>
       <PaddockList paddockList={this.state.listOfPaddocks}/>
-      <ButtonList onAddPaddockFormSubmit={this.handleAddPaddockFormSubmit}/>
+      <ButtonList onAddPaddockFormSubmit={this.handleAddPaddockFormSubmit} onAddDinosaurFormSubmit={this.handleAddDinosaurFormSubmit}/>
       </div>
     )
 
