@@ -1,0 +1,13 @@
+button {
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  height: 35px;
+  font-size: 20px;
+  display: inline-block;
+  background-color: #29a329;
+  border-radius: 5px;
+  border: 2px solid green;
+  margin: 2px;
+  align: center;
+  width: 50%;
+}

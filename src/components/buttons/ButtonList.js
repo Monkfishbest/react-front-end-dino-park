@@ -3,6 +3,7 @@ import TransferButton from "./TransferButton"
 import AddDinosaurButton from "./AddDinosaurButton"
 import AddPaddockButton from "./AddPaddockButton"
 import FeedButton from "./FeedButton"
+import './Buttons.css';
 
 class ButtonList extends Component {
 
