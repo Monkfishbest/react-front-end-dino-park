@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
+import './Buttons.css';
 
 class TransferButton extends Component {
   render() {

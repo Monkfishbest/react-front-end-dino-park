@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './Buttons.css';
 
 class AddPaddockButton extends Component {
   render() {
