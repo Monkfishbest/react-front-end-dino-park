@@ -2,13 +2,6 @@ import React, { Component } from "react";
 
 class AddDinosaurForm extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-    
-    };
-  }
-
   render() {
     return (
       <div className="add-dinosaur-form">
@@ -41,7 +34,11 @@ class AddDinosaurForm extends Component {
             </select>
           <br/>
             <label>Paddock:</label>
-            <input type="select"/>
+            <select name="type">
+                <option selected disabled>choose type</option>
+                <option value="paddock1">Paddock1</option>
+                <option value="paddock2">Paddock2</option>
+            </select>
           <br/>
             <input type="submit" value="Add Dinosaur"/>
         </form>
