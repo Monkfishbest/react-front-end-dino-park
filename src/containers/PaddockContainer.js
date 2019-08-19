@@ -8,7 +8,7 @@ class PaddockContainer extends Component {
     constructor(props) {
       super(props);
       this.state = {
-        listofPaddocks: []
+        listOfPaddocks: []
       };
     }
 
