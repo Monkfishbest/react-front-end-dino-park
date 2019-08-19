@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import PaddockList from '../components/map/PaddockList';
+import PaddockList from '../components/map_paddock_container/PaddockList';
 import ButtonList from '../components/buttons/ButtonList';
 
 class PaddockContainer extends Component {
