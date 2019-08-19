@@ -17,25 +17,24 @@ class ParkContainer extends Component {
     };
   }
 
-
   render() {
     return (
       <div className="park-container">
         <h2>This is a park container</h2>
-      <Router>
-        <React.Fragment>
-        <NavBar/>
-        <Switch>
-        <Route exact path={["/home", "/"]} component={Home}/>
-        <Route path="/about" component={About}/>
-        <Route path="/park-map" component={PaddockContainer}/>
-        <Route path="/faq" component={Faq}/>
-        <Route component={ErrorPage}/>
-        </Switch>
-        <DinosaurList dinoList={this.state.listOfDinos}/>
-        </React.Fragment>
-      </Router>
-</div>
+        <Router>
+          <React.Fragment>
+          <NavBar/>
+          <Switch>
+          <Route exact path={["/home", "/"]} component={Home}/>
+          <Route path="/about" component={About}/>
+          <Route path="/park-map" component={PaddockContainer}/>
+          <Route path="/faq" component={Faq}/>
+          <Route component={ErrorPage}/>
+          </Switch>
+          <DinosaurList dinoList={this.state.listOfDinos}/>
+          </React.Fragment>
+        </Router>
+      </div>
     );
   }
 }

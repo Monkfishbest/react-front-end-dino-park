@@ -24,6 +24,7 @@ class PaddockContainer extends Component {
   render(){
     return (
       <div className="PaddockContainer">
+      <h3>This is a paddock container</h3>
       <PaddockList paddockList={this.state.listOfPaddocks}/>
       <ButtonList/>
       </div>
