@@ -5,12 +5,13 @@ import AddPaddockButton from "./AddPaddockButton"
 import FeedButton from "./FeedButton"
 
 class ButtonList extends Component {
+
   render() {
     return (
       <div className="button-list">
         <TransferButton/>
         <AddDinosaurButton/>
-        <AddPaddockButton/>
+        <AddPaddockButton onAddPaddockFormSubmit={this.props.onAddPaddockFormSubmit} />
         <FeedButton/>
       </div>
     );

@@ -6,7 +6,7 @@ class AddPaddockButton extends Component {
     return (
       <div className="add-paddock-button">
         <button type="button" value="add-paddock">Add A Paddock</button>
-        <AddPaddock />
+      <AddPaddock onAddPaddockFormSubmit={this.props.onAddPaddockFormSubmit} />
       </div>
     );
   }

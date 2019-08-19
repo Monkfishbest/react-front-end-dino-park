@@ -8,8 +8,11 @@ class PaddockContainer extends Component {
     constructor(props) {
       super(props);
       this.state = {
-        listOfPaddocks: []
+        listOfPaddocks: [],
+        paddockName: '',
+        paddockType: ''
       };
+      this.handleAddPaddockFormSubmit = this.handleAddPaddockFormSubmit.bind(this);
     }
 
   componentDidMount(){
@@ -20,12 +23,17 @@ class PaddockContainer extends Component {
     .catch(err => console.error(err))
   }
 
+  handleAddPaddockFormSubmit({paddockName, paddockType}) {
+      this.setState({ paddockName: paddockName,
+                      paddockType: paddockType})
+  }
+
 
   render(){
     return (
       <div className="PaddockContainer">
       <PaddockList paddockList={this.state.listOfPaddocks}/>
-      <ButtonList/>
+      <ButtonList onAddPaddockFormSubmit={this.handleAddPaddockFormSubmit}/>
       </div>
     )
 
