@@ -6,10 +6,10 @@ class AddDinosaurForm extends Component {
     super(props);
     this.state = {
       name: "",
-      isHerbivore: null,
-      fullnessLevel: null,
-      type: null,
-      paddock: null
+      isHerbivore: "",
+      fullnessLevel: "",
+      type: "",
+      paddock: ""
     };
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleIsHerbivoreChange = this.handleIsHerbivoreChange.bind(this);
@@ -43,7 +43,7 @@ class AddDinosaurForm extends Component {
     event.preventDefault();
     const newDino = this.state;
     this.props.onAddDinosaurFormSubmit({newDino: newDino})
-    this.setState({name: "", isHerbivore: null, fullnessLevel: null, type: null, paddock: null})
+    this.setState({name: "", isHerbivore: "", fullnessLevel: "", type: "", paddock: ""})
   }
 
   render() {
@@ -63,7 +63,6 @@ class AddDinosaurForm extends Component {
           <br/>
             <label>Species:</label>
             <select name="type" onChange={this.handleTypeChange} value={this.state.type}>
-                <option selected disabled>choose type</option>
                 <option value="mososaurus" id="carnivores">Mososaurus</option>
                 <option value="velociraptor" id="carnivores">Velociraptor</option>
                 <option value="spinosaurus" id="carnivores">Spinosaurus</option>
@@ -78,8 +77,7 @@ class AddDinosaurForm extends Component {
             </select>
           <br/>
             <label>Paddock:</label>
-            <select name="type" onChange={this.handlePaddockChange} value={this.state.paddock}>
-                <option selected disabled>choose type</option>
+            <select name="paddock" onChange={this.handlePaddockChange} value={this.state.paddock}>
                 <option value="paddock1">Paddock1</option>
                 <option value="paddock2">Paddock2</option>
             </select>

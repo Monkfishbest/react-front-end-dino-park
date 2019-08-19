@@ -3,6 +3,7 @@ import Home from '../components/Home';
 import Faq from '../components/FAQ';
 import About from '../components/About';
 import PaddockContainer from './PaddockContainer'
+import DinosaurContainer from './DinosaurContainer'
 import DinosaurList from '../components/paddock_dino_container/DinosaurList';
 import ErrorPage from '../components/ErrorPage';
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
@@ -28,6 +29,7 @@ class ParkContainer extends Component {
           <Route exact path={["/home", "/"]} component={Home}/>
           <Route path="/about" component={About}/>
           <Route path="/park-map" component={PaddockContainer}/>
+          <Route path="/paddock" component={DinosaurContainer}/>
           <Route path="/faq" component={Faq}/>
           <Route component={ErrorPage}/>
           </Switch>
