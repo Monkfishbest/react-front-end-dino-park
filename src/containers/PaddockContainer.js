@@ -4,16 +4,15 @@ import ButtonList from '../components/buttons/ButtonList';
 
 class PaddockContainer extends Component {
 
-
-    constructor(props) {
-      super(props);
-      this.state = {
-        listOfPaddocks: [],
-        paddockName: '',
-        paddockType: ''
-      };
-      this.handleAddPaddockFormSubmit = this.handleAddPaddockFormSubmit.bind(this);
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      listOfPaddocks: [],
+      paddockName: '',
+      paddockType: ''
+    };
+    this.handleAddPaddockFormSubmit = this.handleAddPaddockFormSubmit.bind(this);
+  }
 
   // componentDidMount(){
   //   const url = 'PLACEHOLDER-PLACEHOLDER-PLACEHOLDER'
@@ -24,11 +23,11 @@ class PaddockContainer extends Component {
   // }
 
   handleAddPaddockFormSubmit({paddockName, paddockType}) {
-      this.setState({ paddockName: paddockName,
-                      paddockType: paddockType})
+    this.setState({ paddockName: paddockName,
+      paddockType: paddockType
+    })
   }
-
-
+  
   render(){
     return (
       <div className="PaddockContainer">
