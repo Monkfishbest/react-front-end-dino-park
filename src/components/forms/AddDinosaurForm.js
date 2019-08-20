@@ -26,7 +26,7 @@ class AddDinosaurForm extends Component {
   }
 
   handleIsHerbivoreChange(event){
-    this.setState({isHerbivore: event.target.value})
+    this.setState({isHerbivore: (event.target.value === 'true')})
   }
 
   handleFullnessLevelChange(event){
@@ -50,7 +50,7 @@ class AddDinosaurForm extends Component {
 
   getDinosaurByDietType(){
     if(this.state.isHerbivore){
-      return  (
+      return (
         <Fragment>
         <option value="TRICERATOPS" id="herbivores">Triceratops</option>
         <option value="STEGOSAURUS" id="herbivores">Stegosaurus</option>
