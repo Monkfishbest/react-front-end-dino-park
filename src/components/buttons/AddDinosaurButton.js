@@ -7,16 +7,16 @@ class AddDinosaurButton extends Component {
     super(props);
     this.handleButtonClick = this.handleButtonClick.bind(this)
     this.state = {
-      isShowForm: false
+    displayForm : false
     };
   }
 
   handleButtonClick(){
-    this.setState({isShowForm: !this.state.isShowForm})
+    this.setState({displayForm: !this.state.displayForm})
   }
 
   render() {
-    if(this.state.isShowForm){
+    if(this.state.displayForm){
       return (
         <div className="add-dinosaur-button">
         <button type="button" value="add-dinosaur" onClick={this.handleButtonClick}>Add A Dinosaur</button>
@@ -27,7 +27,7 @@ class AddDinosaurButton extends Component {
       return (
         <div className="add-dinosaur-button">
         <button type="button" value="add-dinosaur" onClick={this.handleButtonClick}>Add A Dinosaur</button>
-        </div> 
+        </div>
       )
     }
   }
