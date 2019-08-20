@@ -1,13 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 
-class PaddockListItem extends Component {
-  render() {
-    return (
-      <div className="paddock-list-item">
-        <li>paddocklistitem</li>
-      </div>
-    );
-  }
+const PaddockListItem = (props) => {
+  return (
+    <li className="paddock-list-item">
+    paddocklistitem
+    </li>
+  );
 }
 
 export default PaddockListItem;

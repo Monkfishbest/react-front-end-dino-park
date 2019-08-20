@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PaddockList from '../components/map_paddock_container/PaddockList';
 import ButtonList from '../components/buttons/ButtonList';
+import Request from '../helpers/Request';
 
 class PaddockContainer extends Component {
 
@@ -19,15 +20,25 @@ class PaddockContainer extends Component {
       this.setupAndPostNewDino = this.setupAndPostNewDino.bind(this);
     }
 
-  componentDidMount(){
-    const url = 'http://localhost:8080/paddocks'
-    fetch(url)
-    .then(res => res.json())
-    .then(returnedPaddocks => this.setState({listOfPaddocks: returnedPaddocks}))
+    componentDidMount(){
+      const request = new Request();
+      request.get("/paddocks")
+      .then(returnedPaddocks => this.setState({listOfPaddocks: returnedPaddocks}))
+
     .catch(err => console.error(err))
   }
 
   handleAddPaddockFormSubmit({paddockName, paddockType}) {
+    let type = true;
+    if (paddockType !== "Herbivore") {
+      type = false;
+    }
+    const paddock = {
+      "name": paddockName,
+      "isHerbivore": type
+    };
+    const request = new Request();
+    request.post('/paddocks', paddock);
     this.setState({ paddockName: paddockName,
       paddockType: paddockType
     })
@@ -41,7 +52,7 @@ class PaddockContainer extends Component {
 
   findPaddockId() {
     const paddockName = this.state.newDino.paddock;
-    const paddock = this.state.listOfPaddocks.find(paddock => {return paddock.name == paddockName})
+    const paddock = this.state.listOfPaddocks.find(paddock => {return paddock.name === paddockName})
     return paddock.id;
   }
 
@@ -56,10 +67,6 @@ class PaddockContainer extends Component {
     this.constructAddDinoPayload();
 
   }
-
-
-
-
 
   render(){
     return (

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import AddPaddock from '../forms/AddPaddock'
+import AddPaddockForm from '../forms/AddPaddockForm'
 import './Buttons.css';
 
 class AddPaddockButton extends Component {
@@ -7,7 +7,7 @@ class AddPaddockButton extends Component {
     return (
       <div className="add-paddock-button">
         <button type="button" value="add-paddock">Add A Paddock</button>
-      <AddPaddock onAddPaddockFormSubmit={this.props.onAddPaddockFormSubmit} />
+        <AddPaddockForm onAddPaddockFormSubmit={this.props.onAddPaddockFormSubmit} />
       </div>
     );
   }

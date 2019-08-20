@@ -6,13 +6,13 @@ const PaddockList = (props) => {
     return (
       <PaddockListItem key={index} paddock={paddock}></PaddockListItem>
     )
-  })
+  });
 
-    return(
-      <div className="paddock-list">
-        {paddockNodes}
-      </div>
-    );
+  return(
+    <ul className="paddock-list">
+    {paddockNodes}
+    </ul>
+  );
 }
 
 export default PaddockList;
