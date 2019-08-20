@@ -29,7 +29,7 @@ class RemoveDinosaurButton extends Component {
       <div className="remove-dinosaur-button">
         <button className="remove-dinosaur-btn" type="button" value="remove-dinosaur" onClick={() => this.openModal()}>Remove a Dinosaur &#129430;</button>
           <Modal visible={this.state.visible} width="55%" height="55%" onClickAway={() => this.closeModal()}>
-            <RemoveDinosaurForm paddockList={this.props.paddockList} />
+            <RemoveDinosaurForm dinosaurList={this.props.dinosaurList} />
         </Modal>
       </div>
     )

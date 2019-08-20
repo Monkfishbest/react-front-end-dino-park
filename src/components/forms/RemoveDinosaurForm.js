@@ -1,17 +1,14 @@
 import React, {Component} from 'react';
+import RemoveDinosaurList from './RemoveDinosaurList'
 
 class RemoveDinosaurForm extends Component {
-  constructor(props) {
-    super(props);
-
-    }
 
   render() {
     return (
       <div className="remove-dinosaur-form">
         <h2>Remove A Dinosaur:</h2>
         <form>
-          <p>list of dinosaurs to be removed goes here</p>
+          <RemoveDinosaurList dinosaurList={this.props.dinosaurList} />
         </form>
       </div>
     )
