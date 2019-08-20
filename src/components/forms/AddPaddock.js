@@ -37,15 +37,15 @@ class AddPaddock extends Component {
 
             <input id="paddock-name" type="text" value={this.state.paddockName}
               onChange={this.handlePaddockNameChange}/>
-            <label htmlFor="paddock-name">Paddock Name</label>
+            <label for="paddock-name">Paddock Name</label>
 
             <input type="radio" id="herbivore" name="paddock-type" value="Herbivore"
               onChange={this.handlePaddockTypeChange}/>
-            <label htmlFor="herbivore">Herbivore</label>
+            <label for="herbivore">Herbivore</label>
 
             <input type="radio" id="tyrannosaurus-rex" name="paddock-type" value="T-Rex"
               onChange={this.handlePaddockTypeChange}/>
-            <label htmlFor="tyrannosaurus-Rex">Tyrannosaurus Rex</label>
+            <label for="tyrannosaurus-Rex">Tyrannosaurus Rex</label>
 
             <input type="submit" className="button" value="Save Paddock"></input>
           </div>
