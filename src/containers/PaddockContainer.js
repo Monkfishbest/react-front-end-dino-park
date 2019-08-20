@@ -5,22 +5,26 @@ import Request from '../helpers/Request';
 
 class PaddockContainer extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      listOfPaddocks: [],
-      paddockName: '',
-      paddockType: '',
-      newDino: {}
-    };
-    this.handleAddPaddockFormSubmit = this.handleAddPaddockFormSubmit.bind(this);
-    this.handleAddDinosaurFormSubmit = this.handleAddDinosaurFormSubmit.bind(this);
-  }
 
-  componentDidMount(){
-    const request = new Request();
-    request.get("/paddocks")
-    .then(returnedDinos => this.setState({listOfDinos: returnedDinos, listOfPaddocks: returnedDinos}))
+    constructor(props) {
+      super(props);
+      this.state = {
+        listOfPaddocks: [],
+        paddockName: '',
+        paddockType: '',
+        newDino: {},
+        paddockId: ''
+      };
+      this.handleAddPaddockFormSubmit = this.handleAddPaddockFormSubmit.bind(this);
+      this.handleAddDinosaurFormSubmit = this.handleAddDinosaurFormSubmit.bind(this);
+      this.setupAndPostNewDino = this.setupAndPostNewDino.bind(this);
+    }
+
+    componentDidMount(){
+      const request = new Request();
+      request.get("/paddocks")
+      .then(returnedPaddocks => this.setState({listOfPaddocks: returnedPaddocks}))
+
     .catch(err => console.error(err))
   }
 
@@ -38,10 +42,30 @@ class PaddockContainer extends Component {
     this.setState({ paddockName: paddockName,
       paddockType: paddockType
     })
-  }
+}
+
 
   handleAddDinosaurFormSubmit({newDino}) {
-    this.setState({newDino: newDino})
+    this.setState({newDino: newDino},
+    () => this.setupAndPostNewDino())
+  }
+
+  findPaddockId() {
+    const paddockName = this.state.newDino.paddock;
+    const paddock = this.state.listOfPaddocks.find(paddock => {return paddock.name === paddockName})
+    return paddock.id;
+  }
+
+  constructAddDinoPayload() {
+    const paddockId = this.findPaddockId();
+    let payload = this.state.newDino;
+    let paddockUrl = "http://localhost:8080/paddock/" + paddockId;
+    payload.paddock = paddockUrl;
+  }
+
+  setupAndPostNewDino() {
+    this.constructAddDinoPayload();
+
   }
 
   render(){
