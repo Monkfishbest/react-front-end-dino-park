@@ -15,14 +15,14 @@ class TransferDinosaurForm extends Component {
   }
 
   getHerbivoreList() {
-    return this.props.herbivoreList.map(herbivore => {
-      return(<option>{herbivore.name}</option>)
+    return this.props.herbivoreList.map((herbivore, index) => {
+      return(<option key={index}>{herbivore.name}</option>)
     });
   }
 
   getPaddockList() {
-    return this.props.paddockList.map(paddock => {
-      return(<option>{paddock.name}</option>)
+    return this.props.paddockList.map((paddock, index) => {
+      return(<option key={index}>{paddock.name}</option>)
     });
   }
 
