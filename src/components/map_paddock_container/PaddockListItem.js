@@ -3,7 +3,7 @@ import React from "react";
 const PaddockListItem = (props) => {
   return (
     <li className="paddock-list-item">
-    paddocklistitem
+      {props.paddock.name}
     </li>
   );
 }
