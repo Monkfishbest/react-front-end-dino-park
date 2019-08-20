@@ -10,7 +10,6 @@ class PaddockContainer extends Component {
     this.state = {
       listOfPaddocks: [],
       newDino: {},
-      paddockId: ''
     };
     this.handleAddPaddockFormSubmit = this.handleAddPaddockFormSubmit.bind(this);
     this.handleAddDinosaurFormSubmit = this.handleAddDinosaurFormSubmit.bind(this);
@@ -46,22 +45,21 @@ class PaddockContainer extends Component {
       () => this.setupAndPostNewDino())
     }
 
-    findPaddockId() {
+    findPaddock() {
       const paddockName = this.state.newDino.paddock;
       const paddock = this.state.listOfPaddocks.find(paddock => {return paddock.name === paddockName})
-      return paddock.id;
+      return paddock;
     }
 
     constructAddDinoPayload() {
-      const paddockId = this.findPaddockId();
-      let payload = this.state.newDino;
-      let paddockUrl = "http://localhost:8080/paddock/" + paddockId;
-      payload.paddock = paddockUrl;
+      const paddock = this.findPaddock();
+      this.state.newDino.paddock = paddock;
     }
 
     setupAndPostNewDino() {
       this.constructAddDinoPayload();
-
+      const request = new Request();
+      request.post('/herbivores', this.state.newDino)
     }
 
     render(){
@@ -71,7 +69,6 @@ class PaddockContainer extends Component {
         <ButtonList onAddPaddockFormSubmit={this.handleAddPaddockFormSubmit} onAddDinosaurFormSubmit={this.handleAddDinosaurFormSubmit}/>
         </div>
       )
-
     }
   }
 
