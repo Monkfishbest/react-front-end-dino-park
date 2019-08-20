@@ -5,7 +5,7 @@ class TransferButton extends Component {
   render() {
     return (
       <div className="transfer-button">
-        <button type="button" value="transfer">Transfer A Dinosaur</button>
+        <button className="transfer-btn" type="button" value="transfer">Transfer a Dinosaur</button>
       </div>
     );
   }

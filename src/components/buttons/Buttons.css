@@ -1,16 +1,32 @@
 button {
-  color: white;
   font-family: 'Quicksand', sans-serif;
   height: 35px;
   font-size: 20px;
   display: inline-block;
-  background-color: #29a329;
   border-radius: 5px;
-  border: 2px solid green;
   margin: 2px;
   align: center;
   width: 50%;
+  color: black;
+  background-color: #70eb47;
+  border: 2px solid #45cf17;
 }
+
+.feed-btn {
+  background-color: #70eb47;
+  border: 2px solid #45cf17;
+}
+
+.transfer-btn {
+  background-color: #e61919;
+  border: 2px solid #a11212;
+}
+
+.add-paddock-btn, .add-dinosaur-btn {
+  background-color: #f9f906;
+  border: 2px solid #aeae04;
+}
+
 
 .pop-up {
   text-align: center;
