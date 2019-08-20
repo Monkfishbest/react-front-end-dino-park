@@ -1,31 +1,40 @@
 import React, {Component} from 'react';
 import PaddockList from '../components/map_paddock_container/PaddockList';
 import ButtonList from '../components/buttons/ButtonList';
+import Request from '../helpers/Request';
 
 class PaddockContainer extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      listOfPaddocks: [],
+      paddockName: '',
+      paddockType: '',
+      newDino: {}
+    };
+    this.handleAddPaddockFormSubmit = this.handleAddPaddockFormSubmit.bind(this);
+    this.handleAddDinosaurFormSubmit = this.handleAddDinosaurFormSubmit.bind(this);
+  }
 
-    constructor(props) {
-      super(props);
-      this.state = {
-        listOfPaddocks: [],
-        paddockName: '',
-        paddockType: '',
-        newDino: {}
-      };
-      this.handleAddPaddockFormSubmit = this.handleAddPaddockFormSubmit.bind(this);
-      this.handleAddDinosaurFormSubmit = this.handleAddDinosaurFormSubmit.bind(this);
-    }
-
-  // componentDidMount(){
-  //   const url = 'PLACEHOLDER-PLACEHOLDER-PLACEHOLDER'
-  //   fetch(url)
-  //   .then(res => res.json())
-  //   .then(returnedDinos => this.setState({listOfDinos: returnedDinos, listOfPaddocks: returnedDinos}))
-  //   .catch(err => console.error(err))
-  // }
+  componentDidMount(){
+    const request = new Request();
+    request.get("/paddocks")
+    .then(returnedDinos => this.setState({listOfDinos: returnedDinos, listOfPaddocks: returnedDinos}))
+    .catch(err => console.error(err))
+  }
 
   handleAddPaddockFormSubmit({paddockName, paddockType}) {
+    let type = true;
+    if (paddockType !== "Herbivore") {
+      type = false;
+    }
+    const paddock = {
+      "name": paddockName,
+      "isHerbivore": type
+    };
+    const request = new Request();
+    request.post('/paddocks', paddock);
     this.setState({ paddockName: paddockName,
       paddockType: paddockType
     })
@@ -34,7 +43,6 @@ class PaddockContainer extends Component {
   handleAddDinosaurFormSubmit({newDino}) {
     this.setState({newDino: newDino})
   }
-
 
   render(){
     return (
