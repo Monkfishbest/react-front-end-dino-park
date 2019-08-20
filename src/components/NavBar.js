@@ -11,9 +11,6 @@ const NavBar = () => (
       <Link className="white" to="/park-map">Park Map</Link>
     </li>
     <li>
-      <Link className="white" to="/paddock">Paddock</Link>
-    </li>
-    <li>
       <Link className="white" to="/about">About</Link>
     </li>
     <li>
