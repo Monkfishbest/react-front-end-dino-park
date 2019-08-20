@@ -22,9 +22,10 @@ class DinosaurContainer extends Component {
   render() {
     return (
       <div className="paddock">
+        <span>&#127795;</span>
         <DinosaurList listOfDinos={this.state.listOfDinos}/>
         <div className="park-container">
-        <h1>hi</h1> 
+        <h1>hi</h1>
         </div>
       </div>
     );

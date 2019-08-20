@@ -19,14 +19,14 @@ class AddDinosaurButton extends Component {
     if(this.state.displayForm){
       return (
         <div className="add-dinosaur-button">
-        <button className="add-dinosaur-btn" type="button" value="add-dinosaur" onClick={this.handleButtonClick}>Add a Dinosaur</button>
+        <button className="add-dinosaur-btn" type="button" value="add-dinosaur" onClick={this.handleButtonClick}>Add a Dinosaur &#129430;</button>
         <AddDinosaurForm onAddDinosaurFormSubmit={this.props.onAddDinosaurFormSubmit}/>
         </div>
       );
     } else {
       return (
         <div className="add-dinosaur-button">
-        <button className="add-dinosaur-btn" type="button" value="add-dinosaur" onClick={this.handleButtonClick}>Add a Dinosaur</button>
+        <button className="add-dinosaur-btn" type="button" value="add-dinosaur" onClick={this.handleButtonClick}>Add a Dinosaur &#129430;</button>
         </div>
       )
     }
