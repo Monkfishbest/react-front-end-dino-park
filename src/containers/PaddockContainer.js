@@ -67,7 +67,11 @@ class PaddockContainer extends Component {
   setupAndPostNewDino() {
     this.constructAddDinoPayload();
     const request = new Request();
-    request.post('/herbivores', this.state.newDino)
+    if(this.state.newDino.isHerbivore) {
+      request.post('/herbivores', this.state.newDino)
+    } else {
+      request.post('/carnivores', this.state.newDino)
+    }
   }
 
   render(){
