@@ -1,4 +1,4 @@
-button {
+button, .button {
   font-family: 'Quicksand', sans-serif;
   height: 35px;
   font-size: 20px;
@@ -6,7 +6,7 @@ button {
   border-radius: 5px;
   margin: 2px;
   align: center;
-  width: 50%;
+  width: 60%;
   color: black;
   background-color: #70eb47;
   border: 2px solid #45cf17;

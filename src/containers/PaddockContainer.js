@@ -12,6 +12,7 @@ class PaddockContainer extends Component {
       newDino: {},
     };
     this.handleAddPaddockFormSubmit = this.handleAddPaddockFormSubmit.bind(this);
+    this.handleTransferFormSubmit = this.handleTransferFormSubmit.bind(this);
     this.handleAddDinosaurFormSubmit = this.handleAddDinosaurFormSubmit.bind(this);
     this.setupAndPostNewDino = this.setupAndPostNewDino.bind(this);
   }
@@ -39,6 +40,9 @@ class PaddockContainer extends Component {
     });
   }
 
+  handleTransferFormSubmit() {
+    console.log('Transfer Set Up')
+  }
 
   handleAddDinosaurFormSubmit({newDino}) {
     this.setState({newDino: newDino},
@@ -66,7 +70,7 @@ class PaddockContainer extends Component {
       return (
         <div className="PaddockContainer">
         <PaddockList paddockList={this.state.listOfPaddocks}/>
-        <ButtonList onAddPaddockFormSubmit={this.handleAddPaddockFormSubmit} onAddDinosaurFormSubmit={this.handleAddDinosaurFormSubmit}/>
+        <ButtonList onAddPaddockFormSubmit={this.handleAddPaddockFormSubmit} onTransferFormSubmit={this.handleTransferSubmit} onAddDinosaurFormSubmit={this.handleAddDinosaurFormSubmit}/>
         </div>
       )
     }

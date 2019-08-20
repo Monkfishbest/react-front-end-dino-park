@@ -1,6 +1,32 @@
 import React, {Component} from 'react';
 
 class TransferDinosaurForm extends Component {
+  constructor(props) {
+    super(props);
+    this.state= {
+      selectedDinosaur: '',
+      selectedPaddock: ''
+    }
+    this.handleDinosaurChange = this.handleDinosaurChange.bind(this);
+    this.handlePaddockChange = this.handlePaddockChange.bind(this);
+    this.handleTransferSubmit = this.handleTransferSubmit.bind(this);
+  }
+
+  handleDinosaurChange(event) {
+    this.setState({selectedDinosaur: event.target.value});
+  }
+
+  handlePaddockChange(event) {
+    this.setState({selectedPaddock: event.target.value});
+  }
+
+  handleTransferSubmit(event) {
+    event.preventDefault();
+    this.props.onTransferFormSubmit({
+      paddockName: this.state.paddockName,
+      paddockType: this.state.paddockType
+    })
+  }
 
   render() {
     return (
@@ -18,7 +44,7 @@ class TransferDinosaurForm extends Component {
           <option>Paddock2</option>
           </select>
 
-          <input type="submit" value="Transfer Dinosaur" />
+          <input className="button" type="submit" value="Transfer Dinosaur" />
         </form>
       </div>
     )

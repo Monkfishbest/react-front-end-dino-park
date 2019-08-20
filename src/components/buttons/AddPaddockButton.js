@@ -1,36 +1,37 @@
 import React, { Component } from "react";
 import AddPaddockForm from '../forms/AddPaddockForm'
 import './Buttons.css';
+import Modal from 'react-awesome-modal';
 
 class AddPaddockButton extends Component {
   constructor(props){
     super(props);
-    this.handleButtonClick = this.handleButtonClick.bind(this)
     this.state = {
-      displayForm : false
+      visible: false,
     };
   }
 
-  handleButtonClick(){
-    this.setState({displayForm: !this.state.displayForm})
+  openModal() {
+    this.setState({
+        visible : true
+    });
   }
 
+  closeModal() {
+    this.setState({
+        visible : false
+    });
+  }
 
   render() {
-    if(this.state.displayForm){
-      return (
-        <div className="add-paddock-button">
-        <button className="add-paddock-btn" type="button" value="add-paddock" onClick={this.handleButtonClick}>Add a Paddock &#127795;</button>
-        <AddPaddockForm onAddPaddockFormSubmit={this.props.onAddPaddockFormSubmit} />
-        </div>
-      );
-    } else {
-      return (
-        <div className="add-paddock-button">
-        <button className="add-paddock-btn" type="button" value="add-paddock" onClick={this.handleButtonClick}>Add a Paddock &#127795;</button>
-        </div>
-      )
-    }
+    return (
+      <div className="add-paddock-button">
+      <button className="add-paddock-btn" type="button" value="add-paddock" onClick={() => this.openModal()} >Add a Paddock &#127795;</button>
+        <Modal visible={this.state.visible} width="55%" height="55%" onClickAway={() => this.closeModal()}>
+          <AddPaddockForm onAddPaddockFormSubmit={this.props.onAddPaddockFormSubmit}/>
+        </Modal>
+      </div>
+    )
   }
 }
 

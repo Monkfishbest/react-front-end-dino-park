@@ -99,7 +99,7 @@ class AddDinosaurForm extends Component {
       <option value="Muldoon">Muldoon</option>
       </select>
       <br/>
-      <input type="submit" value="Add Dinosaur"/>
+      <input className="button" type="submit" value="Add Dinosaur"/>
       </form>
       </div>
     );
