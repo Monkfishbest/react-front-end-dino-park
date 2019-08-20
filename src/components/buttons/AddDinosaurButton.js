@@ -16,7 +16,6 @@ class AddDinosaurButton extends Component {
   }
 
   render() {
-
     return (
       <div className="add-dinosaur-button">
         <button type="button" value="add-dinosaur" onClick={this.handleButtonClick}>Add A Dinosaur</button>
@@ -25,5 +24,4 @@ class AddDinosaurButton extends Component {
     );
   }
 }
-
 export default AddDinosaurButton;
