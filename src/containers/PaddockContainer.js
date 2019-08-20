@@ -11,25 +11,27 @@ class PaddockContainer extends Component {
         listOfPaddocks: [],
         paddockName: '',
         paddockType: '',
-        newDino: {}
+        newDino: {},
+        paddockId: ''
       };
       this.handleAddPaddockFormSubmit = this.handleAddPaddockFormSubmit.bind(this);
       this.handleAddDinosaurFormSubmit = this.handleAddDinosaurFormSubmit.bind(this);
       this.setupAndPostNewDino = this.setupAndPostNewDino.bind(this);
     }
 
-  // componentDidMount(){
-  //   const url = 'PLACEHOLDER-PLACEHOLDER-PLACEHOLDER'
-  //   fetch(url)
-  //   .then(res => res.json())
-  //   .then(returnedDinos => this.setState({listOfDinos: returnedDinos, listOfPaddocks: returnedDinos}))
-  //   .catch(err => console.error(err))
-  // }
+  componentDidMount(){
+    const url = 'http://localhost:8080/paddocks'
+    fetch(url)
+    .then(res => res.json())
+    .then(returnedPaddocks => this.setState({listOfPaddocks: returnedPaddocks}))
+    .catch(err => console.error(err))
+  }
 
   handleAddPaddockFormSubmit({paddockName, paddockType}) {
     this.setState({ paddockName: paddockName,
       paddockType: paddockType
     })
+}
 
 
   handleAddDinosaurFormSubmit({newDino}) {
@@ -37,12 +39,26 @@ class PaddockContainer extends Component {
     () => this.setupAndPostNewDino())
   }
 
+  findPaddockId() {
+    const paddockName = this.state.newDino.paddock;
+    const paddock = this.state.listOfPaddocks.find(paddock => {return paddock.name == paddockName})
+    return paddock.id;
+  }
+
+  constructAddDinoPayload() {
+    const paddockId = this.findPaddockId();
+    let payload = this.state.newDino;
+    let paddockUrl = "http://localhost:8080/paddock/" + paddockId;
+    payload.paddock = paddockUrl;
+  }
 
   setupAndPostNewDino() {
-    findPaddockId();
-    constructAddDinoPayload();
-    postNewDino();
+    this.constructAddDinoPayload();
+
   }
+
+
+
 
 
   render(){
