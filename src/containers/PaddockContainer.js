@@ -15,6 +15,7 @@ class PaddockContainer extends Component {
       };
       this.handleAddPaddockFormSubmit = this.handleAddPaddockFormSubmit.bind(this);
       this.handleAddDinosaurFormSubmit = this.handleAddDinosaurFormSubmit.bind(this);
+      this.setupAndPostNewDino = this.setupAndPostNewDino.bind(this);
     }
 
   // componentDidMount(){
@@ -29,10 +30,18 @@ class PaddockContainer extends Component {
     this.setState({ paddockName: paddockName,
       paddockType: paddockType
     })
-  }
+
 
   handleAddDinosaurFormSubmit({newDino}) {
-    this.setState({newDino: newDino})
+    this.setState({newDino: newDino},
+    () => this.setupAndPostNewDino())
+  }
+
+
+  setupAndPostNewDino() {
+    findPaddockId();
+    constructAddDinoPayload();
+    postNewDino();
   }
 
 
