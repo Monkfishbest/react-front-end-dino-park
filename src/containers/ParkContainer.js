@@ -21,7 +21,6 @@ class ParkContainer extends Component {
   render() {
     return (
       <div className="park-container">
-        <h2>This is a park container</h2>
         <Router>
           <React.Fragment>
           <NavBar/>

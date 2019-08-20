@@ -21,7 +21,6 @@ class DinosaurContainer extends Component {
   render() {
     return (
       <div className="paddock">
-        <h4>I am the paddock component</h4>
         <DinosaurList listOfDinos={this.state.listOfDinos}/>
       </div>
     );
