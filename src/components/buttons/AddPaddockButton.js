@@ -20,14 +20,14 @@ class AddPaddockButton extends Component {
     if(this.state.displayForm){
       return (
         <div className="add-paddock-button">
-        <button type="button" value="add-paddock" onClick={this.handleButtonClick}>Add A Paddock</button>
+        <button className="add-paddock-btn" type="button" value="add-paddock" onClick={this.handleButtonClick}>Add a Paddock</button>
         <AddPaddockForm onAddPaddockFormSubmit={this.props.onAddPaddockFormSubmit} />
         </div>
       );
     } else {
       return (
         <div className="add-paddock-button">
-        <button type="button" value="add-paddock" onClick={this.handleButtonClick}>Add A Paddock</button>
+        <button className="add-paddock-btn" type="button" value="add-paddock" onClick={this.handleButtonClick}>Add a Paddock</button>
         </div>
       )
     }
