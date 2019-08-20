@@ -1,9 +1,11 @@
 import React from "react";
+import {Link} from "react-router-dom";
+
 
 const PaddockListItem = (props) => {
   return (
     <li className="paddock-list-item">
-      {props.paddock.name}
+      <Link to={'park-map/paddocks/'+props.paddock.name}>{props.paddock.name}</Link>
     </li>
   );
 }
