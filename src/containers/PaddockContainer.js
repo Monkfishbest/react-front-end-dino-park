@@ -9,6 +9,7 @@ class PaddockContainer extends Component {
     super(props);
     this.state = {
       listOfPaddocks: [],
+      listOfHerbivores: [],
       newDino: {}
     };
     this.handleAddPaddockFormSubmit = this.handleAddPaddockFormSubmit.bind(this);
@@ -21,7 +22,9 @@ class PaddockContainer extends Component {
     const request = new Request();
     request.get("/paddocks")
     .then(returnedPaddocks => this.setState({listOfPaddocks: returnedPaddocks}))
-
+    .catch(err => console.error(err))
+    request.get("/herbivores")
+    .then(herbivores => this.setState({listOfHerbivores: herbivores}))
     .catch(err => console.error(err))
   }
 
@@ -78,7 +81,9 @@ class PaddockContainer extends Component {
     return (
       <div className="PaddockContainer">
       <PaddockList paddockList={this.state.listOfPaddocks}/>
-      <ButtonList onAddPaddockFormSubmit={this.handleAddPaddockFormSubmit} onTransferFormSubmit={this.handleTransferSubmit} onAddDinosaurFormSubmit={this.handleAddDinosaurFormSubmit}/>
+      <ButtonList paddockList={this.state.listOfPaddocks}
+      herbivoreList={this.state.listOfHerbivores}
+      onAddPaddockFormSubmit={this.handleAddPaddockFormSubmit} onTransferFormSubmit={this.handleTransferSubmit} onAddDinosaurFormSubmit={this.handleAddDinosaurFormSubmit}/>
       </div>
     )
   }
