@@ -9,7 +9,7 @@ class PaddockContainer extends Component {
     super(props);
     this.state = {
       listOfPaddocks: [],
-      newDino: {},
+      newDino: {}
     };
     this.handleAddPaddockFormSubmit = this.handleAddPaddockFormSubmit.bind(this);
     this.handleTransferFormSubmit = this.handleTransferFormSubmit.bind(this);
@@ -45,35 +45,39 @@ class PaddockContainer extends Component {
   }
 
   handleAddDinosaurFormSubmit({newDino}) {
-    this.setState({newDino: newDino},
-      () => this.setupAndPostNewDino())
-    }
-
-    findPaddock() {
-      const paddockName = this.state.newDino.paddock;
-      const paddock = this.state.listOfPaddocks.find(paddock => {return paddock.name === paddockName})
-      return paddock;
-    }
-
-    constructAddDinoPayload() {
-      const paddock = this.findPaddock();
-      this.state.newDino.paddock = paddock;
-    }
-
-    setupAndPostNewDino() {
-      this.constructAddDinoPayload();
-      const request = new Request();
-      request.post('/herbivores', this.state.newDino)
-    }
-
-    render(){
-      return (
-        <div className="PaddockContainer">
-        <PaddockList paddockList={this.state.listOfPaddocks}/>
-        <ButtonList onAddPaddockFormSubmit={this.handleAddPaddockFormSubmit} onTransferFormSubmit={this.handleTransferSubmit} onAddDinosaurFormSubmit={this.handleAddDinosaurFormSubmit}/>
-        </div>
-      )
-    }
+    this.setState(
+      {newDino: newDino}, () => this.setupAndPostNewDino()
+    )
   }
 
-  export default PaddockContainer;
+  findPaddock() {
+    const paddockName = this.state.newDino.paddock;
+    const paddock = this.state.listOfPaddocks.find(paddock => {return paddock.name === paddockName})
+    return paddock;
+  }
+
+  constructAddDinoPayload() {
+    const paddock = this.findPaddock();
+    const dinoCopy = this.state.newDino
+    dinoCopy.paddock = paddock;
+    this.setState({newDino: dinoCopy});
+    console.log(this.state.newDino);
+  }
+
+  setupAndPostNewDino() {
+    this.constructAddDinoPayload();
+    const request = new Request();
+    request.post('/herbivores', this.state.newDino)
+  }
+
+  render(){
+    return (
+      <div className="PaddockContainer">
+      <PaddockList paddockList={this.state.listOfPaddocks}/>
+      <ButtonList onAddPaddockFormSubmit={this.handleAddPaddockFormSubmit} onTransferFormSubmit={this.handleTransferSubmit} onAddDinosaurFormSubmit={this.handleAddDinosaurFormSubmit}/>
+      </div>
+    )
+  }
+}
+
+export default PaddockContainer;
