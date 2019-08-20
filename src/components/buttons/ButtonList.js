@@ -13,7 +13,7 @@ class ButtonList extends Component {
       <div className="button-list">
         <TransferButton onTransferFormSubmit={this.props.onTransferFormSubmit}/>
         <AddDinosaurButton onAddDinosaurFormSubmit={this.props.onAddDinosaurFormSubmit}/>
-        <RemoveDinosaurButton />
+        <RemoveDinosaurButton paddockList={this.props.paddockList}/>
         <AddPaddockButton onAddPaddockFormSubmit={this.props.onAddPaddockFormSubmit} />
         <FeedButton url={"http://localhost:8080/dinosaurs/feed"}/>
       </div>
