@@ -6,16 +6,31 @@ class ShowFormControll extends Component {
     this.handleShowFormClick = this.handleShowFormClick.bind(this);
     this.handleHideFormClick = this.handleHideFormClick.bind(this);
     this.state = {
-      showForm: false
+      isShowForm: false
     };
   }
 
   handleShowFormClick(){
-    this.setState({showForm:true})
+    this.setState({isShowForm:true})
   }
 
   handleHideFormClick(){
-    this.setState({showForm:false})
+    this.setState({isShowForm:false})
   }
 
+  render() {
+    const isShowForm = this.state.isShowForm;
+    let button;
+
+    if (isShowForm) {
+      button = <AddDinosaurButton onClick={this.handleHideFormClick}/>
+    } else {
+      button = <AddDinosaurButton onClick={this.handleShowFormClick}/>
+    }
+    return (
+      <div>
+      <AddDinosaurButton isShowForm={isShowForm}/>
+      </div>
+    )
+  }
 }
