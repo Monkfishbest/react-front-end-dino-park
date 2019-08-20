@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import DinosaurList from '../components/paddock_dino_container/DinosaurList';
-import TransferDinosaurForm from '../components/forms/TransferDinosaurForm';
-import ButtonList from '../components/buttons/ButtonList';
 
 class DinosaurContainer extends Component {
 
@@ -25,8 +23,6 @@ class DinosaurContainer extends Component {
       <div className="paddock">
         <h4>I am the paddock component</h4>
         <DinosaurList listOfDinos={this.state.listOfDinos}/>
-        <ButtonList/>
-        <TransferDinosaurForm />
       </div>
     );
   }

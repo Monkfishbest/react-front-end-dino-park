@@ -63,23 +63,24 @@ class AddDinosaurForm extends Component {
           <br/>
             <label>Species:</label>
             <select name="type" onChange={this.handleTypeChange} value={this.state.type}>
-                <option value="mososaurus" id="carnivores">Mososaurus</option>
-                <option value="velociraptor" id="carnivores">Velociraptor</option>
-                <option value="spinosaurus" id="carnivores">Spinosaurus</option>
-                <option value="pterodactyl" id="carnivores">Pterodactyl</option>
-                <option value="giganotosaurus" id="carnivores">Giganotosaurus</option>
-                <option value="mososaurus" id="carnivores">Mososaurus</option>
-                <option value="triceratops" id="herbivores">Triceratops</option>
-                <option value="stegosaurus" id="herbivores">Stegosaurus</option>
-                <option value="diplodocus" id="herbivores">Diplodocus</option>
-                <option value="centrosaurus" id="herbivores">Centrosaurus</option>
-                <option value="atopodentatus" id="herbivores">Atopodentatus</option>
+                <option value="MOSOSAURUS" id="carnivores">Mososaurus</option>
+                <option value="VELOCIRAPTOR" id="carnivores">Velociraptor</option>
+                <option value="SPINOSAURUS" id="carnivores">Spinosaurus</option>
+                <option value="PTERODACTYL" id="carnivores">Pterodactyl</option>
+                <option value="GIGANOTOSAURUS" id="carnivores">Giganotosaurus</option>
+                <option value="MOSOSAURUS" id="carnivores">Mososaurus</option>
+                <option value="TRICERATOPS" id="herbivores">Triceratops</option>
+                <option value="STEGOSAURUS" id="herbivores">Stegosaurus</option>
+                <option value="DIPLODOCUS" id="herbivores">Diplodocus</option>
+                <option value="CENTROSAURUS" id="herbivores">Centrosaurus</option>
+                <option value="ATOPODENTATUS" id="herbivores">Atopodentatus</option>
             </select>
           <br/>
             <label>Paddock:</label>
             <select name="paddock" onChange={this.handlePaddockChange} value={this.state.paddock}>
-                <option value="paddock1">Paddock1</option>
-                <option value="paddock2">Paddock2</option>
+                <option value="Hammond">Hammond</option>
+                <option value="Grant">Grant</option>
+                <option value="Muldoon">Muldoon</option>
             </select>
           <br/>
             <input type="submit" value="Add Dinosaur"/>
