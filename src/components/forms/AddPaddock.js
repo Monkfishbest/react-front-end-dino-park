@@ -21,35 +21,35 @@ class AddPaddock extends Component {
   }
 
   handleAddPaddockSubmit(event) {
-      event.preventDefault();
-      this.props.onAddPaddockFormSubmit({
-        paddockName: this.state.paddockName,
-        paddockType: this.state.paddockType
-  })
-}
+    event.preventDefault();
+    this.props.onAddPaddockFormSubmit({
+      paddockName: this.state.paddockName,
+      paddockType: this.state.paddockType
+    })
+  }
 
   render() {
     return (
       <div className="add-paddock-form" >
-        <h3>Enter new paddock details</h3>
-        <form onSubmit={this.handleAddPaddockSubmit}>
-          <div className="form-entry">
+      <h3>Enter new paddock details</h3>
+      <form onSubmit={this.handleAddPaddockSubmit}>
+      <div className="form-entry">
 
-            <input id="paddock-name" type="text" value={this.state.paddockName}
-              onChange={this.handlePaddockNameChange}/>
-            <label for="paddock-name">Paddock Name</label>
+      <input id="paddock-name" type="text" value={this.state.paddockName}
+      onChange={this.handlePaddockNameChange}/>
+      <label for="paddock-name">Paddock Name</label>
 
-            <input type="radio" id="herbivore" name="paddock-type" value="Herbivore"
-              onChange={this.handlePaddockTypeChange}/>
-            <label for="herbivore">Herbivore</label>
+      <input type="radio" id="herbivore" name="paddock-type" value="Herbivore"
+      onChange={this.handlePaddockTypeChange}/>
+      <label for="herbivore">Herbivore</label>
 
-            <input type="radio" id="tyrannosaurus-rex" name="paddock-type" value="T-Rex"
-              onChange={this.handlePaddockTypeChange}/>
-            <label for="tyrannosaurus-Rex">Tyrannosaurus Rex</label>
+      <input type="radio" id="tyrannosaurus-rex" name="paddock-type" value="T-Rex"
+      onChange={this.handlePaddockTypeChange}/>
+      <label for="tyrannosaurus-Rex">Tyrannosaurus Rex</label>
 
-            <input type="submit" className="button" value="Save Paddock"></input>
-          </div>
-        </form>
+      <input type="submit" className="button" value="Save Paddock"></input>
+      </div>
+      </form>
       </div>
     )
   }
