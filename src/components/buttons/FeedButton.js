@@ -1,18 +1,33 @@
 import React, { Component } from "react";
 import './Buttons.css';
+import Modal from 'react-awesome-modal';
 
 class FeedButton extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      url: ""
+      url: "",
+      visible: false
     }
+
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
     this.setState({url: this.props.url})
+  }
+
+  openModal() {
+    this.setState({
+        visible : true
+    });
+  }
+
+  closeModal() {
+    this.setState({
+        visible : false
+    });
   }
 
   handleSubmit(evt) {
@@ -27,7 +42,13 @@ class FeedButton extends Component {
     return (
       <div className="feed-button">
         <form onSubmit={this.handleSubmit}>
-          <button type="submit" value="feed">Feed</button>
+          <button onClick={() => this.openModal()} type="submit" value="feed">Feed</button>
+          <Modal visible={this.state.visible} width="55%" height="22%" onClickAway={() => this.closeModal()}>
+            <div className="pop-up">
+              <h3>All the dinosaurs have been fed!</h3>
+              <button onClick={() => this.closeModal()}>Okay</button>
+            </div>
+          </Modal>
         </form>
       </div>
     );
