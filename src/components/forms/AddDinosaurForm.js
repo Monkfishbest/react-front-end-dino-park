@@ -7,7 +7,7 @@ class AddDinosaurForm extends Component {
     super(props);
     this.state = {
       name: "",
-      isHerbivore: "",
+      isHerbivore: false,
       fullnessLevel: "",
       type: "",
       paddock: ""
@@ -45,13 +45,14 @@ class AddDinosaurForm extends Component {
     event.preventDefault();
     const newDino = this.state;
     this.props.onAddDinosaurFormSubmit({newDino: newDino})
-    this.setState({name: "", isHerbivore: "", fullnessLevel: "", type: "", paddock: ""})
+    this.setState({name: "", isHerbivore: false, fullnessLevel: "", type: "", paddock: ""})
   }
 
   getDinosaurByDietType(){
     if(this.state.isHerbivore){
       return (
         <Fragment>
+        <option selected disabled value="">Choose a herbivore...</option>
         <option value="TRICERATOPS" id="herbivores">Triceratops</option>
         <option value="STEGOSAURUS" id="herbivores">Stegosaurus</option>
         <option value="DIPLODOCUS" id="herbivores">Diplodocus</option>
@@ -62,11 +63,12 @@ class AddDinosaurForm extends Component {
     }
     return (
       <Fragment>
+      <option selected disabled value="">Choose a carnivore...</option>
       <option value="VELOCIRAPTOR" id="carnivores">Velociraptor</option>
       <option value="SPINOSAURUS" id="carnivores">Spinosaurus</option>
       <option value="PTERODACTYL" id="carnivores">Pterodactyl</option>
-      <option value="GIGANOTOSAURUS" id="carnivores">Giganotosaurus</option>
       <option value="MOSOSAURUS" id="carnivores">Mososaurus</option>
+      <option value="GIGANOTOSAURUS" id="carnivores">Giganotosaurus</option>
       </Fragment>
     )
   }
@@ -81,14 +83,14 @@ class AddDinosaurForm extends Component {
       <input type="text" onChange={this.handleNameChange} value={this.state.name}/>
       <br/>
       <label>Diet:</label>
-      <input id="herbivore" type="radio" name="diet" value={true} onChange={this.handleIsHerbivoreChange}/>Herbivore
       <input id="carnivore" type="radio" name="diet" value={false} onChange={this.handleIsHerbivoreChange}/>Carnivore
+      <input id="herbivore" type="radio" name="diet" value={true} onChange={this.handleIsHerbivoreChange}/>Herbivore
       <br/>
       <label>Fullness Level:</label>
       <input type="number" min="0" max="100" onChange={this.handleFullnessLevelChange} value={this.state.fullnessLevel}/>
       <br/>
       <label>Species:</label>
-      <select name="type" onChange={this.handleTypeChange} value={this.state.type} >
+      <select name="type" onChange={this.handleTypeChange} value={this.state.type}>
       {this.getDinosaurByDietType()}
       </select>
       <br/>
