@@ -27,8 +27,8 @@ class ParkContainer extends Component {
           <Switch>
           <Route exact path={["/home", "/"]} component={Home}/>
           <Route path="/about" component={About}/>
+          <Route path="/park-map/paddocks/:paddock" component={DinosaurContainer}/>
           <Route path="/park-map" component={PaddockContainer}/>
-          <Route path="/paddock" component={DinosaurContainer}/>
           <Route path="/faq" component={Faq}/>
           <Route component={ErrorPage}/>
           </Switch>
