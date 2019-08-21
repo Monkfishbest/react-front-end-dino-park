@@ -6,9 +6,15 @@
   background-attachment: fixed;
   min-height: 100vh;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.title h4 {
-  margin-top: 0;
-  padding-top: 2em;
+.text-container {
+  background-color: white;
+  height: 50%;
+  width: 70%;
+  opacity: 0.9;
+  border-radius: 5px;
 }
