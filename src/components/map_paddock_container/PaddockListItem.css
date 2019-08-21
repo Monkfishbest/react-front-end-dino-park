@@ -6,7 +6,7 @@
 
 .paddock-list-item a {
   background-color: #29a329;
-  box-shadow: 0 7px 0 #1f7a1f;
+  border: 2px solid #1f7a1f;
   color: black;
   padding: 1em;
   text-decoration: none;
