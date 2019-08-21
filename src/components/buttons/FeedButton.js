@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import './Buttons.css';
 import Modal from 'react-awesome-modal';
+import Emoji from '../Emoji';
 
 class FeedButton extends Component {
 
@@ -42,7 +43,7 @@ class FeedButton extends Component {
     return (
       <div className="feed-button">
         <form onSubmit={this.handleSubmit}>
-          <button className="feed-btn" onClick={() => this.openModal()} type="submit" value="feed">Feed &#127830; &#127807;</button>
+          <button className="feed-btn" onClick={() => this.openModal()} type="submit" value="feed">Feed <Emoji symbol="🍖" label="meat on bone"/><Emoji symbol="🌿" label="herb"/></button>
           <Modal visible={this.state.visible} width="55%" height="22%" onClickAway={() => this.closeModal()}>
             <div className="pop-up">
               <h2>All the dinosaurs have been fed!</h2>

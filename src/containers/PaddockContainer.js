@@ -56,7 +56,6 @@ class PaddockContainer extends Component {
     const paddock = this.findPaddock(paddockName);
     const dinosaur = this.findDinosaur(dinosaurName);
     dinosaur.paddock = paddock;
-    console.log(dinosaur);
     const request = new Request();
     request.update('/herbivores/' + dinosaur.id, dinosaur);
   }
