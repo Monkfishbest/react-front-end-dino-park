@@ -42,7 +42,7 @@ class FeedButton extends Component {
     return (
       <div className="feed-button">
         <form onSubmit={this.handleSubmit}>
-          <button onClick={() => this.openModal()} type="submit" value="feed">Feed</button>
+          <button className="feed-btn" onClick={() => this.openModal()} type="submit" value="feed">Feed &#127830; &#127807;</button>
           <Modal visible={this.state.visible} width="55%" height="22%" onClickAway={() => this.closeModal()}>
             <div className="pop-up">
               <h3>All the dinosaurs have been fed!</h3>

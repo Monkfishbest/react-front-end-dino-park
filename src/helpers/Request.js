@@ -16,7 +16,7 @@ class Request {
     });
   }
 
-  post(url, payload){
+  post(url, payload) {
     return fetch(this.baseUrl + url, {
       method: "POST",
       headers: {'Content-Type': 'application/json'},
@@ -24,6 +24,13 @@ class Request {
     });
   }
 
+  update(url, payload) {
+    return fetch(this.baseUrl + url, {
+      method: "PUT",
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(payload)
+    });
+  }
 }
 
 export default Request;
