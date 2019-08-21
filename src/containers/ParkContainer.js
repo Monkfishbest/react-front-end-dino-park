@@ -5,6 +5,7 @@ import About from '../components/About';
 import PaddockContainer from './PaddockContainer'
 import DinosaurContainer from './DinosaurContainer'
 import ErrorPage from '../components/ErrorPage';
+import Rampage from '../components/Rampage'
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import React, { Component } from "react";
 
@@ -21,6 +22,7 @@ class ParkContainer extends Component {
           <Route path="/park-map/paddocks/:paddock" component={DinosaurContainer}/>
           <Route path="/park-map" component={PaddockContainer}/>
           <Route path="/faq" component={Faq}/>
+          <Route path="/rampage" component={Rampage}/>
           <Route component={ErrorPage}/>
           </Switch>
           </React.Fragment>
