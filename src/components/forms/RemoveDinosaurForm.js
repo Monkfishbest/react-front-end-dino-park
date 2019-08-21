@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import RemoveDinosaurList from './RemoveDinosaurList'
-import './Form.css'
 
 class RemoveDinosaurForm extends Component {
 

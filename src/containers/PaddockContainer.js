@@ -77,6 +77,11 @@ class PaddockContainer extends Component {
     return dinosaur;
   }
 
+  findFromAllDinosaur(name) {
+    const dinosaur = this.state.listOfDinosaurs.find(dinosaur => {return dinosaur.name === name})
+    return dinosaur;
+  }
+
   constructAddDinoPayload() {
     const paddock = this.findPaddock(this.state.newDino.paddock);
     const dinoCopy = this.state.newDino
@@ -94,8 +99,15 @@ class PaddockContainer extends Component {
     }
   }
 
+  removeDino(dinoName) {
+    console.log("name to remove passed back:", dinoName);
+    const dinoToDelete = this.findFromAllDinosaur(dinoName);
+    const request = new Request();
+    request.delete('/dinosaurs/' + dinoToDelete.id)
+  }
+
   handleRemoveDinoClick(dinoToRemove) {
-    this.setState({dinoToRemove: dinoToRemove});
+    this.setState({dinoToRemove: dinoToRemove}, () => this.removeDino(this.state.dinoToRemove));
   }
 
   render(){
