@@ -1,5 +1,6 @@
 .paddock-list-item {
   margin-bottom: 15px;
+  margin-top: 15px;
   flex: 1;
   text-align: center;
 }
@@ -17,8 +18,7 @@
 
 .paddock-list {
   display: flex;
-  padding: 1em;
-  /* margin-top: 200px; */
+  padding: 10px;
   flex-wrap: wrap;
   min-height: 10em;
 }

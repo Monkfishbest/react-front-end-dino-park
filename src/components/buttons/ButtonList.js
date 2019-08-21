@@ -11,14 +11,14 @@ class ButtonList extends Component {
   render() {
     return (
       <div className="button-list">
+        <AddPaddockButton onAddPaddockFormSubmit={this.props.onAddPaddockFormSubmit} />
+        <AddDinosaurButton paddockList={this.props.paddockList} onAddDinosaurFormSubmit={this.props.onAddDinosaurFormSubmit}/>
+        <FeedButton url={"http://localhost:8080/dinosaurs/feed"}/>
         <TransferButton onTransferFormSubmit={this.props.onTransferFormSubmit}
         paddockList={this.props.herbivorePaddockList}
         herbivoreList={this.props.herbivoreList}/>
-        <AddDinosaurButton paddockList={this.props.paddockList} onAddDinosaurFormSubmit={this.props.onAddDinosaurFormSubmit}/>
         <RemoveDinosaurButton dinosaurList={this.props.dinosaurList}
           onRemoveDinoClick={this.props.onRemoveDinoClick}/>
-        <AddPaddockButton onAddPaddockFormSubmit={this.props.onAddPaddockFormSubmit} />
-        <FeedButton url={"http://localhost:8080/dinosaurs/feed"}/>
       </div>
     );
   }
