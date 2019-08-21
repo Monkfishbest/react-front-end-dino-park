@@ -1,6 +1,26 @@
 .paddock-list-item a {
-  color: green;
-  font-family: helvetica;
-  text-decoration: none;
-  text-transform: uppercase;
+  background-color: red;
+   box-shadow: 0 7px 0 darkred;
+   color: white;
+   padding: 1em;
+   position: relative;
+   text-decoration: none;
+   border-radius: 50px;
+   text-transform: uppercase;
+   margin: 2em;
   }
+
+.paddock-list {
+  display: flex;
+  margin: 2em;
+}
+
+.paddock-list-item a:hover {
+  background-color: yellow;
+  cursor: pointer;
+}
+
+.paddock-list-item a:active {
+  box-shadow: none;
+  top: 5px;
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import PaddockListItem from './PaddockListItem';
+import './PaddockListItem.css';
 
 const PaddockList = (props) => {
   const paddockNodes = props.paddockList.map((paddock, index) => {
@@ -9,9 +10,9 @@ const PaddockList = (props) => {
   });
 
   return(
-    <ul className="paddock-list">
+    <div className="paddock-list">
     {paddockNodes}
-    </ul>
+    </div>
   );
 }
 
