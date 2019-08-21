@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './Form.css'
 
 class TransferDinosaurForm extends Component {
   constructor(props) {
@@ -46,16 +47,19 @@ class TransferDinosaurForm extends Component {
     return (
       <div>
         <form className="transfer-dino-form" onSubmit={this.handleTransferSubmit}>
+          <h2>Transfer A Dinosaur:</h2>
+          <label>Move</label>
           <select name="dino" onChange={this.handleDinosaurChange} value={this.state.selectedDinosaur}>
             <option disabled value="">Select a Dinosaur</option>
             {this.getHerbivoreList()}
           </select>
-
+          <br/>
+          <label>To</label>
           <select name="paddock" onChange={this.handlePaddockChange} value={this.state.selectedPaddock}>
             <option disabled value="">Select a Paddock</option>
             {this.getPaddockList()}
           </select>
-
+          <br/>
           <input className="button" type="submit" value="Transfer Dinosaur" />
         </form>
       </div>

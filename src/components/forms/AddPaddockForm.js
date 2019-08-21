@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './Form.css'
 
 class AddPaddock extends Component {
   constructor(props) {
@@ -31,26 +32,29 @@ class AddPaddock extends Component {
   render() {
     return (
       <div className="add-paddock-form" >
-      <h3>Enter new paddock details</h3>
+      <h2>Add A Paddock:</h2>
       <form onSubmit={this.handleAddPaddockSubmit}>
       <div className="form-entry">
 
+      <label htmlFor="paddock-name">Paddock Name:</label>
+      <br/>
       <input id="paddock-name" type="text" value={this.state.paddockName}
       onChange={this.handlePaddockNameChange}/>
-      <label htmlFor="paddock-name">Paddock Name</label>
-
+      <br/>
+      <label>Paddock Type:</label>
+      <div className='radio-buttons'>
       <input type="radio" id="herbivore" name="paddock-type" value="Herbivore"
       onChange={this.handlePaddockTypeChange}/>
       <label htmlFor="herbivore">Herbivore</label>
-
+      <br/>
       <input type="radio" id="carnivore" name="paddock-type" value="Carnivore"
       onChange={this.handlePaddockTypeChange}/>
       <label htmlFor="carnivore">Carnivore</label>
-
+      <br/>
       <input type="radio" id="tyrannosaurus-rex" name="paddock-type" value="T-Rex"
       onChange={this.handlePaddockTypeChange}/>
       <label htmlFor="tyrannosaurus-Rex">Tyrannosaurus Rex</label>
-
+      </div>
       <input type="submit" className="button" value="Save Paddock"></input>
       </div>
       </form>

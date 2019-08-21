@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import './Form.css'
 
 class RemoveDinosaurListItem extends Component {
   constructor(props){
@@ -15,7 +16,7 @@ class RemoveDinosaurListItem extends Component {
   render() {
     return (
       <li className="remove-dinosaur-list-item">
-        <p> {this.props.dinosaur.name} {this.props.dinosaur.paddock.name} {this.props.dinosaur.type} {this.props.dinosaur.herbivore ? "Herbivore" : "Carnivore"} {this.props.dinosaur.id}</p>
+        <p> {this.props.dinosaur.name}, {this.props.dinosaur.type}, currently in {this.props.dinosaur.paddock.name} paddock ({this.props.dinosaur.herbivore ? "Herbivore" : "Carnivore"})</p>
         <button onClick={this.handleRemoveClick} value={this.props.dinosaur.name}>Delete</button>
       </li>
     );

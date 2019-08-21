@@ -1,0 +1,10 @@
+.add-dinosaur-form, .add-paddock-form, .remove-dinosaur-form, .transfer-dino-form{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+.add-dinosaur-form .button, .add-paddock-form .button, .remove-dinosaur-form .button, .transfer-dino-form .button{
+  width: 200px;
+}

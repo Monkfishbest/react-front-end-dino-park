@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-
+import './Form.css'
 
 class AddDinosaurForm extends Component {
 
@@ -89,27 +89,27 @@ class AddDinosaurForm extends Component {
       <div className="add-dinosaur-form">
         <h2>Add A Dinosaur:</h2>
         <form onSubmit={this.handleAddDinosaurFormSubmit}>
-          <label>Name:</label>
-          <input type="text" onChange={this.handleNameChange} value={this.state.name}/>
+            <label>Name:</label>
+            <input type="text" onChange={this.handleNameChange} value={this.state.name}/>
           <br/>
-          <label>Diet:</label>
-          <input id="carnivore" type="radio" name="diet" value={false} onChange={this.handleIsHerbivoreChange}/>Carnivore
-          <input id="herbivore" type="radio" name="diet" value={true} onChange={this.handleIsHerbivoreChange}/>Herbivore
+            <label>Diet:</label>
+            <input id="carnivore" type="radio" name="diet" value={false} onChange={this.handleIsHerbivoreChange}/>Carnivore
+            <input id="herbivore" type="radio" name="diet" value={true} onChange={this.handleIsHerbivoreChange}/>Herbivore
           <br/>
-          <label>Fullness Level:</label>
-          <input type="number" min="0" max="100" onChange={this.handleFullnessLevelChange} value={this.state.fullnessLevel}/>
+            <label>Fullness Level:</label>
+            <input type="number" min="0" max="100" onChange={this.handleFullnessLevelChange} value={this.state.fullnessLevel}/>
           <br/>
-          <label>Species:</label>
-          <select name="type" onChange={this.handleTypeChange} value={this.state.type}>
-            {this.getDinosaurByDietType()}
-          </select>
+            <label>Species:</label>
+            <select name="type" onChange={this.handleTypeChange} value={this.state.type}>
+              {this.getDinosaurByDietType()}
+            </select>
           <br/>
-          <label>Paddock:</label>
-          <select name="paddock" onChange={this.handlePaddockChange} value={this.state.paddock}>
-            {this.getPaddocks()}
-          </select>
+            <label>Paddock:</label>
+            <select name="paddock" onChange={this.handlePaddockChange} value={this.state.paddock}>
+              {this.getPaddocks()}
+            </select>
           <br/>
-          <input className="button" type="submit" value="Add Dinosaur"/>
+            <input className="button" type="submit" value="Add Dinosaur"/>
         </form>
       </div>
     );
