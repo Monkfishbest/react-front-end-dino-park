@@ -4,7 +4,8 @@ import RemoveDinosaurListItem from './RemoveDinosaurListItem'
 const RemoveDinosaurList = (props) => {
   const dinosaurNodes = props.dinosaurList.map((dinosaur, index) => {
     return (
-      <RemoveDinosaurListItem key={index} dinosaur={dinosaur}></RemoveDinosaurListItem>
+      <RemoveDinosaurListItem key={index} dinosaur={dinosaur}
+        onRemoveDinoClick={props.onRemoveDinoClick}></RemoveDinosaurListItem>
     )
   });
 
