@@ -49,13 +49,13 @@ class TransferDinosaurForm extends Component {
         <form className="transfer-dino-form" onSubmit={this.handleTransferSubmit}>
           <h2>Transfer A Dinosaur:</h2>
           <label>Move dinosaur</label>
-          <select name="dino" onChange={this.handleDinosaurChange} value={this.state.selectedDinosaur}>
+          <select name="dino" onChange={this.handleDinosaurChange} value={this.state.selectedDinosaur} required>
             <option disabled value="">Select a Dinosaur</option>
             {this.getHerbivoreList()}
           </select>
           <br/>
           <label>To paddock</label>
-          <select name="paddock" onChange={this.handlePaddockChange} value={this.state.selectedPaddock}>
+          <select name="paddock" onChange={this.handlePaddockChange} value={this.state.selectedPaddock} required>
             <option disabled value="">Select a Paddock</option>
             {this.getPaddockList()}
           </select>

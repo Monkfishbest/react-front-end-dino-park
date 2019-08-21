@@ -44,7 +44,7 @@ class AddPaddockForm extends Component {
             <label>Paddock Type:</label>
             <div className='radio-buttons'>
               <input type="radio" id="carnivore" name="paddock-type" value="Carnivore"
-              onChange={this.handlePaddockTypeChange}/>
+              onChange={this.handlePaddockTypeChange} required/>
               <label htmlFor="carnivore">Carnivore</label>
               <br/>
               <input type="radio" id="herbivore" name="paddock-type" value="Herbivore"
