@@ -14,13 +14,13 @@ class TransferButton extends Component {
 
   openModal() {
     this.setState({
-        visible : true
+      visible : true
     });
   }
 
   closeModal() {
     this.setState({
-        visible : false
+      visible : false
     });
   }
 

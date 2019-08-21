@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Modal from 'react-awesome-modal';
+import Emoji from './Emoji';
 import './Rampage.css';
 
 class Rampage extends Component {
@@ -12,13 +13,13 @@ class Rampage extends Component {
 
   openModal() {
     this.setState({
-        visible : true
+      visible : true
     });
   }
 
   closeModal() {
     this.setState({
-        visible : false
+      visible : false
     });
     window.location = '/park-map';
   }
@@ -26,7 +27,7 @@ class Rampage extends Component {
   render() {
     return (
       <div className="rampage-div">
-        <button className="rampage-btn" type="button" value="rampage" onClick={() => this.openModal()}>Click to confirm Dinoaurs are going crazy!! &#129430; </button>
+        <button className="rampage-btn" type="button" value="rampage" onClick={() => this.openModal()}>Click to confirm Dinoaurs are going crazy!! <Emoji symbol="🦖" label="T-Rex"/> </button>
 
         <Modal visible={this.state.visible} width="75%" height="75%" onClickAway={() => this.closeModal()}>
           <div className="modal-contents">
