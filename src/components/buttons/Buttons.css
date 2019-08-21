@@ -17,7 +17,7 @@ button, .button {
   border: 2px solid #45cf17;
 }
 
-.transfer-btn {
+.transfer-btn, .remove-dinosaur-btn {
   background-color: #eb4747;
   border: 2px solid #cf1717;
 }
