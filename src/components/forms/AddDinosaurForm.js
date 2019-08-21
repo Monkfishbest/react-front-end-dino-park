@@ -90,22 +90,23 @@ class AddDinosaurForm extends Component {
         <h2>Add A Dinosaur:</h2>
         <form onSubmit={this.handleAddDinosaurFormSubmit}>
             <label>Name:</label>
-            <input type="text" onChange={this.handleNameChange} value={this.state.name}/>
+            <input type="text" onChange={this.handleNameChange} value={this.state.name} required/>
           <br/>
             <label>Diet:</label>
-            <input id="carnivore" type="radio" name="diet" value={false} onChange={this.handleIsHerbivoreChange}/>Carnivore
+            <input id="carnivore" type="radio" name="diet" value={false} onChange={this.handleIsHerbivoreChange} required/>Carnivore
             <input id="herbivore" type="radio" name="diet" value={true} onChange={this.handleIsHerbivoreChange}/>Herbivore
           <br/>
             <label>Fullness Level:</label>
-            <input type="number" min="0" max="100" onChange={this.handleFullnessLevelChange} value={this.state.fullnessLevel}/>
+            <input type="number" min="0" max="100" onChange={this.handleFullnessLevelChange} value={this.state.fullnessLevel} required/>
           <br/>
             <label>Species:</label>
-            <select name="type" onChange={this.handleTypeChange} value={this.state.type}>
+            <select name="type" onChange={this.handleTypeChange} value={this.state.type} required>
               {this.getDinosaurByDietType()}
             </select>
           <br/>
             <label>Paddock:</label>
-            <select name="paddock" onChange={this.handlePaddockChange} value={this.state.paddock}>
+            <select name="paddock" onChange={this.handlePaddockChange} value={this.state.paddock} required>
+              <option disabled value="">Select a paddock...</option>
               {this.getPaddocks()}
             </select>
           <br/>
