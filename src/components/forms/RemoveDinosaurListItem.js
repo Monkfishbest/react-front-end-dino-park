@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import './Form.css'
 
 class RemoveDinosaurListItem extends Component {
   constructor(props){
