@@ -15,7 +15,7 @@ button, .button, .pop-up-btn {
   background-color: #ffff66;
   border: 2px solid #e6e600;
   overflow: auto;
-  max-height: 100%
+  max-height: 100%;
 }
 
 .pop-up-btn {
@@ -30,7 +30,8 @@ button, .button, .pop-up-btn {
 
 .button-list {
   display: flex;
-  margin-left: 10px;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 button:hover, .button:hover, .pop-up-btn:hover, a:hover {
