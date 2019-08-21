@@ -1,30 +1,29 @@
-.paddock-list-item a {
-  background-color: red;
-   box-shadow: 0 7px 0 darkred;
-   color: white;
-   padding: 1em;
-   position: relative;
-   text-decoration: none;
-   border-radius: 50px;
-   text-transform: uppercase;
-  }
+.paddock-list-item {
+  margin-bottom: 15px;
+  flex: 1;
+  text-align: center;
+}
 
+.paddock-list-item a {
+  background-color: #29a329;
+  box-shadow: 0 7px 0 #1f7a1f;
+  color: black;
+  padding: 1em;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 30px;
+  display: block;
+  }
 
 .paddock-list {
   display: flex;
-  margin: 1em;
   padding: 1em;
+  /* margin-top: 200px; */
   flex-wrap: wrap;
-  height: 9em;
-  margin-bottom: 1px;
+  min-height: 10em;
 }
 
 .paddock-list-item a:hover {
   background-color: yellow;
   cursor: pointer;
-}
-
-.paddock-list-item a:active {
-  box-shadow: none;
-  top: 5px;
 }

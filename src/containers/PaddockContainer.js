@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import PaddockList from '../components/map_paddock_container/PaddockList';
 import ButtonList from '../components/buttons/ButtonList';
 import Request from '../helpers/Request';
+import './PaddockContainer.css';
 
 class PaddockContainer extends Component {
 
@@ -62,7 +63,9 @@ class PaddockContainer extends Component {
     const dinosaur = this.findDinosaur(dinosaurName);
     dinosaur.paddock = paddock;
     const request = new Request();
-    request.update('/herbivores/' + dinosaur.id, dinosaur);
+    request.update('/herbivores/' + dinosaur.id, dinosaur).then(() => {
+      window.location = '/park-map'
+    });
   }
 
   handleAddDinosaurFormSubmit({newDino}) {
@@ -97,9 +100,13 @@ class PaddockContainer extends Component {
     this.constructAddDinoPayload();
     const request = new Request();
     if(this.state.newDino.isHerbivore) {
-      request.post('/herbivores', this.state.newDino)
+      request.post('/herbivores', this.state.newDino).then(() => {
+        window.location = '/park-map'
+      });
     } else {
-      request.post('/carnivores', this.state.newDino)
+      request.post('/carnivores', this.state.newDino).then(() => {
+        window.location = '/park-map'
+      });
     }
   }
 
@@ -119,7 +126,7 @@ class PaddockContainer extends Component {
 
   render(){
     return (
-      <div className="PaddockContainer">
+      <div className="paddock-container">
         <PaddockList paddockList={this.state.listOfPaddocks}/>
         <ButtonList paddockList={this.state.listOfPaddocks}
         herbivorePaddockList={this.state.listOfHerbivorePaddocks}

@@ -43,13 +43,13 @@ class FeedButton extends Component {
     return (
       <div className="feed-button">
         <form onSubmit={this.handleSubmit}>
-          <button className="feed-btn" onClick={() => this.openModal()} type="submit" value="feed">Feed <Emoji symbol="🍖" label="meat on bone"/><Emoji symbol="🌿" label="herb"/></button>
-          <Modal visible={this.state.visible} width="55%" height="22%" onClickAway={() => this.closeModal()}>
-            <div className="pop-up">
-              <h2>All the dinosaurs have been fed!</h2>
-              <button onClick={() => this.closeModal()}>Okay</button>
-            </div>
-          </Modal>
+          <button className="feed-btn" onClick={() => this.openModal()} type="submit" value="feed"> <Emoji symbol="🍖" label="meat on bone"/><Emoji symbol="🌿" label="herb"/> Feed <Emoji symbol="🌿" label="herb"/><Emoji symbol="🍖" label="meat on bone"/></button>
+            <Modal visible={this.state.visible} width="55%" height="22%" onClickAway={() => this.closeModal()}>
+              <div className="pop-up">
+                <h2>All the dinosaurs have been fed!</h2>
+                <button className="pop-up-btn" onClick={() => this.closeModal()}>Okay</button>
+              </div>
+            </Modal>
         </form>
       </div>
     );

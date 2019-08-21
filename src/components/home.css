@@ -1,3 +1,20 @@
 .home-page {
+  background-image: url('./images/front_gate.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-container {
+  background-color: white;
+  height: 50%;
+  width: 70%;
+  opacity: 0.9;
+  border-radius: 5px;
 }

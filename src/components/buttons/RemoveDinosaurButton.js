@@ -28,11 +28,11 @@ class RemoveDinosaurButton extends Component {
   render() {
     return (
       <div className="remove-dinosaur-button">
-        <button className="remove-dinosaur-btn" type="button" value="remove-dinosaur" onClick={() => this.openModal()}>Remove a Dinosaur <Emoji symbol="🦖" label="T-Rex"/></button>
+        <button className="remove-dinosaur-btn" type="button" value="remove-dinosaur" onClick={() => this.openModal()}><Emoji symbol="🦖" label="T-Rex"/> Remove a Dinosaur <Emoji symbol="🦖" label="T-Rex"/></button>
           <Modal visible={this.state.visible} width="55%" height="55%" onClickAway={() => this.closeModal()}>
             <RemoveDinosaurForm dinosaurList={this.props.dinosaurList}
               onRemoveDinoClick={this.props.onRemoveDinoClick}/>
-        </Modal>
+          </Modal>
       </div>
     )
   }

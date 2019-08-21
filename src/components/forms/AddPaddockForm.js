@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './Form.css'
 
-class AddPaddock extends Component {
+class AddPaddockForm extends Component {
   constructor(props) {
     super(props);
     this.state= {
@@ -32,35 +32,32 @@ class AddPaddock extends Component {
   render() {
     return (
       <div className="add-paddock-form" >
-      <h2>Add A Paddock:</h2>
-      <form onSubmit={this.handleAddPaddockSubmit}>
-      <div className="form-entry">
+        <h2>Add A Paddock:</h2>
+        <form onSubmit={this.handleAddPaddockSubmit}>
+          <div className="form-entry">
+            <label htmlFor="paddock-name">Paddock Name:</label>
+            <br/>
+            <input id="paddock-name" type="text" value={this.state.paddockName}
+            onChange={this.handlePaddockNameChange} required/>
+            <br/>
 
-      <label htmlFor="paddock-name">Paddock Name:</label>
-      <br/>
-      <input id="paddock-name" type="text" value={this.state.paddockName}
-      onChange={this.handlePaddockNameChange}/>
-      <br/>
-      <label>Paddock Type:</label>
-      <div className='radio-buttons'>
-      <input type="radio" id="herbivore" name="paddock-type" value="Herbivore"
-      onChange={this.handlePaddockTypeChange}/>
-      <label htmlFor="herbivore">Herbivore</label>
-      <br/>
-      <input type="radio" id="carnivore" name="paddock-type" value="Carnivore"
-      onChange={this.handlePaddockTypeChange}/>
-      <label htmlFor="carnivore">Carnivore</label>
-      <br/>
-      <input type="radio" id="tyrannosaurus-rex" name="paddock-type" value="T-Rex"
-      onChange={this.handlePaddockTypeChange}/>
-      <label htmlFor="tyrannosaurus-Rex">Tyrannosaurus Rex</label>
-      </div>
-      <input type="submit" className="button" value="Save Paddock"></input>
-      </div>
-      </form>
+            <label>Paddock Type:</label>
+            <div className='radio-buttons'>
+              <input type="radio" id="carnivore" name="paddock-type" value="Carnivore"
+              onChange={this.handlePaddockTypeChange} required/>
+              <label htmlFor="carnivore">Carnivore</label>
+              <br/>
+              <input type="radio" id="herbivore" name="paddock-type" value="Herbivore"
+              onChange={this.handlePaddockTypeChange}/>
+              <label htmlFor="herbivore">Herbivore</label>
+              <br/>
+            </div>
+            <input type="submit" className="pop-up-btn" value="Save Paddock"></input>
+          </div>
+        </form>
       </div>
     )
   }
 }
 
-export default AddPaddock;
+export default AddPaddockForm;

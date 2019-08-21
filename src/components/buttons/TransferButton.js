@@ -27,7 +27,7 @@ class TransferButton extends Component {
   render() {
     return (
       <div className="transfer-button">
-        <button className="transfer-btn" type="button" value="transfer" onClick={() => this.openModal()}>Transfer a Dinosaur <Emoji symbol="🦕" label="sauropod"/></button>
+        <button className="transfer-btn" type="button" value="transfer" onClick={() => this.openModal()}><Emoji symbol="🦕" label="sauropod"/> Transfer a Dinosaur <Emoji symbol="🦕" label="sauropod"/></button>
           <Modal visible={this.state.visible} width="55%" height="55%" onClickAway={() => this.closeModal()}>
             <TransferDinosaurForm onTransferFormSubmit={this.props.onTransferFormSubmit}
             paddockList={this.props.paddockList}

@@ -8,3 +8,13 @@
 .add-dinosaur-form .button, .add-paddock-form .button, .remove-dinosaur-form .button, .transfer-dino-form .button{
   width: 200px;
 }
+
+select {
+  width: 200px;
+  padding: 5px 35px 5px 5px;
+  margin: 15px 0;
+  font-size: 0.8em;
+  -webkit-appearance: none;
+  background: #99ccff;
+  border: 1px solid #3399ff;
+}
