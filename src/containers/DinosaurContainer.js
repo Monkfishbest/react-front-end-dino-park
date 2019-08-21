@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import DinosaurList from '../components/paddock_dino_container/DinosaurList';
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import RemoveDinosaurButton from '../components/buttons/RemoveDinosaurButton';
 
 class DinosaurContainer extends Component {
 
@@ -22,9 +23,10 @@ class DinosaurContainer extends Component {
   render() {
     return (
       <div className="paddock">
+        <span>&#127795;</span>
         <DinosaurList listOfDinos={this.state.listOfDinos}/>
         <div className="park-container">
-        <h1>hi</h1> 
+        <RemoveDinosaurButton />
         </div>
       </div>
     );

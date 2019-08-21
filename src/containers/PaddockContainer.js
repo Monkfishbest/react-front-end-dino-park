@@ -9,10 +9,11 @@ class PaddockContainer extends Component {
     super(props);
     this.state = {
       listOfPaddocks: [],
-      newDino: {},
-      paddockId: ''
+      listOfHerbivores: [],
+      newDino: {}
     };
     this.handleAddPaddockFormSubmit = this.handleAddPaddockFormSubmit.bind(this);
+    this.handleTransferFormSubmit = this.handleTransferFormSubmit.bind(this);
     this.handleAddDinosaurFormSubmit = this.handleAddDinosaurFormSubmit.bind(this);
     this.setupAndPostNewDino = this.setupAndPostNewDino.bind(this);
   }
@@ -21,7 +22,9 @@ class PaddockContainer extends Component {
     const request = new Request();
     request.get("/paddocks")
     .then(returnedPaddocks => this.setState({listOfPaddocks: returnedPaddocks}))
-
+    .catch(err => console.error(err))
+    request.get("/herbivores")
+    .then(herbivores => this.setState({listOfHerbivores: herbivores}))
     .catch(err => console.error(err))
   }
 
@@ -40,40 +43,50 @@ class PaddockContainer extends Component {
     });
   }
 
+  handleTransferFormSubmit() {
+    console.log('Transfer Set Up')
+  }
 
   handleAddDinosaurFormSubmit({newDino}) {
-    this.setState({newDino: newDino},
-      () => this.setupAndPostNewDino())
-    }
+    this.setState(
+      {newDino: newDino}, () => this.setupAndPostNewDino()
+    )
+  }
 
-    findPaddockId() {
-      const paddockName = this.state.newDino.paddock;
-      const paddock = this.state.listOfPaddocks.find(paddock => {return paddock.name === paddockName})
-      return paddock.id;
-    }
+  findPaddock() {
+    const paddockName = this.state.newDino.paddock;
+    const paddock = this.state.listOfPaddocks.find(paddock => {return paddock.name === paddockName})
+    return paddock;
+  }
 
-    constructAddDinoPayload() {
-      const paddockId = this.findPaddockId();
-      let payload = this.state.newDino;
-      let paddockUrl = "http://localhost:8080/paddock/" + paddockId;
-      payload.paddock = paddockUrl;
-    }
+  constructAddDinoPayload() {
+    const paddock = this.findPaddock();
+    const dinoCopy = this.state.newDino
+    dinoCopy.paddock = paddock;
+    this.setState({newDino: dinoCopy});
+    console.log(this.state.newDino);
+  }
 
-    setupAndPostNewDino() {
-      this.constructAddDinoPayload();
-
-    }
-
-    render(){
-      return (
-        <div className="PaddockContainer">
-        <PaddockList paddockList={this.state.listOfPaddocks}/>
-
-        <ButtonList paddockList={this.state.listOfPaddocks} onAddPaddockFormSubmit={this.handleAddPaddockFormSubmit} onAddDinosaurFormSubmit={this.handleAddDinosaurFormSubmit}/>
-        </div>
-      )
-
+  setupAndPostNewDino() {
+    this.constructAddDinoPayload();
+    const request = new Request();
+    if(this.state.newDino.isHerbivore) {
+      request.post('/herbivores', this.state.newDino)
+    } else {
+      request.post('/carnivores', this.state.newDino)
     }
   }
 
-  export default PaddockContainer;
+  render(){
+    return (
+      <div className="PaddockContainer">
+      <PaddockList paddockList={this.state.listOfPaddocks}/>
+      <ButtonList paddockList={this.state.listOfPaddocks}
+      herbivoreList={this.state.listOfHerbivores}
+      onAddPaddockFormSubmit={this.handleAddPaddockFormSubmit} onTransferFormSubmit={this.handleTransferSubmit} onAddDinosaurFormSubmit={this.handleAddDinosaurFormSubmit}/>
+      </div>
+    )
+  }
+}
+
+export default PaddockContainer;

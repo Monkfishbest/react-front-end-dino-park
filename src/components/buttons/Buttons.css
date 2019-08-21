@@ -1,16 +1,32 @@
-button {
-  color: white;
+button, .button {
   font-family: 'Quicksand', sans-serif;
   height: 35px;
   font-size: 20px;
   display: inline-block;
-  background-color: #29a329;
   border-radius: 5px;
-  border: 2px solid green;
   margin: 2px;
   align: center;
-  width: 50%;
+  width: 60%;
+  color: black;
+  background-color: #70eb47;
+  border: 2px solid #45cf17;
 }
+
+.feed-btn {
+  background-color: #70eb47;
+  border: 2px solid #45cf17;
+}
+
+.transfer-btn {
+  background-color: #eb4747;
+  border: 2px solid #cf1717;
+}
+
+.add-paddock-btn, .add-dinosaur-btn {
+  background-color: #f9f906;
+  border: 2px solid #aeae04;
+}
+
 
 .pop-up {
   text-align: center;
