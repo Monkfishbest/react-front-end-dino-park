@@ -109,7 +109,7 @@ class AddDinosaurForm extends Component {
               {this.getPaddocks()}
             </select>
           <br/>
-            <input className="button" type="submit" value="Add Dinosaur"/>
+            <input className="pop-up-btn" type="submit" value="Add Dinosaur"/>
         </form>
       </div>
     );

@@ -1,5 +1,6 @@
 import React from 'react';
-import DinosaurListItem from './DinosaurListItem'
+import DinosaurListItem from './DinosaurListItem';
+
 
 const DinosaurList = (props) => {
 

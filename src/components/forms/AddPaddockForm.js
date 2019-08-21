@@ -55,7 +55,7 @@ class AddPaddock extends Component {
       onChange={this.handlePaddockTypeChange}/>
       <label htmlFor="tyrannosaurus-Rex">Tyrannosaurus Rex</label>
       </div>
-      <input type="submit" className="button" value="Save Paddock"></input>
+      <input type="submit" className="pop-up-btn" value="Save Paddock"></input>
       </div>
       </form>
       </div>

@@ -19,5 +19,4 @@ const NavBar = () => (
   </ul>
 )
 
-
 export default NavBar;

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import PaddockList from '../components/map_paddock_container/PaddockList';
 import ButtonList from '../components/buttons/ButtonList';
 import Request from '../helpers/Request';
+import './PaddockContainer.css';
 
 class PaddockContainer extends Component {
 
@@ -114,13 +115,15 @@ class PaddockContainer extends Component {
 
   render(){
     return (
-      <div className="PaddockContainer">
-        <PaddockList paddockList={this.state.listOfPaddocks}/>
-        <ButtonList paddockList={this.state.listOfPaddocks}
-        dinosaurList={this.state.listOfDinosaurs}
-        herbivoreList={this.state.listOfHerbivores}
-        onAddPaddockFormSubmit={this.handleAddPaddockFormSubmit} onTransferFormSubmit={this.handleTransferFormSubmit} onAddDinosaurFormSubmit={this.handleAddDinosaurFormSubmit}
-        onRemoveDinoClick={this.handleRemoveDinoClick}/>
+      <div className="paddock-container">
+        <div className="park">
+          <PaddockList paddockList={this.state.listOfPaddocks}/>
+          <ButtonList paddockList={this.state.listOfPaddocks}
+          dinosaurList={this.state.listOfDinosaurs}
+          herbivoreList={this.state.listOfHerbivores}
+          onAddPaddockFormSubmit={this.handleAddPaddockFormSubmit} onTransferFormSubmit={this.handleTransferFormSubmit} onAddDinosaurFormSubmit={this.handleAddDinosaurFormSubmit}
+          onRemoveDinoClick={this.handleRemoveDinoClick}/>
+        </div>
       </div>
     )
   }

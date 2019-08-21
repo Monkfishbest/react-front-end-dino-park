@@ -3,6 +3,7 @@ import DinosaurList from '../components/paddock_dino_container/DinosaurList';
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import RemoveDinosaurButton from '../components/buttons/RemoveDinosaurButton';
 import Emoji from '../components/Emoji';
+import './DinosaurContainer.css';
 
 class DinosaurContainer extends Component {
 
@@ -40,10 +41,12 @@ class DinosaurContainer extends Component {
     return (
       <div className="paddock">
         <Emoji symbol="🌳" label="deciduous tree"/>
-        <h1>{this.state.paddockName} Paddock</h1>
-        <h2>Dinosaurs currently in paddock:</h2>
-        <DinosaurList listOfDinos={this.filterDinosaurs()}/>
-        <div className="park-container">
+        <div className="text">
+          <h1>{this.state.paddockName} Paddock</h1>
+          <h2>Dinosaurs currently in paddock:</h2>
+          <DinosaurList listOfDinos={this.filterDinosaurs()}/>
+        </div>
+        <div className="remove">
         <RemoveDinosaurButton dinosaurList={this.state.listOfDinos}/>
         </div>
       </div>

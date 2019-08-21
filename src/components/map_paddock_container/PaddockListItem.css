@@ -1,22 +1,18 @@
 .paddock-list-item a {
-  background-color: red;
-   box-shadow: 0 7px 0 darkred;
-   color: white;
-   padding: 1em;
-   position: relative;
-   text-decoration: none;
-   border-radius: 50px;
-   text-transform: uppercase;
+  background-color: #29a329;
+  box-shadow: 0 7px 0 #1f7a1f;
+  color: black;
+  padding: 1em;
+  text-decoration: none;
+  border-radius: 10px;
+  text-transform: uppercase;
   }
-
 
 .paddock-list {
   display: flex;
-  margin: 1em;
   padding: 1em;
   flex-wrap: wrap;
   height: 9em;
-  margin-bottom: 1px;
 }
 
 .paddock-list-item a:hover {

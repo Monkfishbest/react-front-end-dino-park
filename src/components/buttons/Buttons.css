@@ -1,33 +1,31 @@
-button, .button {
+button, .button, .pop-up-btn {
   font-family: 'Quicksand', sans-serif;
-  height: 35px;
+  height: 50px;
   font-size: 20px;
   display: inline-block;
   border-radius: 5px;
   margin: 2px;
   align: center;
-  width: 60%;
   color: black;
-  background-color: #70eb47;
-  border: 2px solid #45cf17;
+  background-color: #ffff66;
+  border: 2px solid #e6e600;
 }
 
-.feed-btn {
-  background-color: #70eb47;
-  border: 2px solid #45cf17;
+.pop-up-btn {
+  width: 80%;
+  background-color: #29a329;
+  border: 2px solid #1f7a1f;
 }
-
-.transfer-btn, .remove-dinosaur-btn {
-  background-color: #eb4747;
-  border: 2px solid #cf1717;
-}
-
-.add-paddock-btn, .add-dinosaur-btn {
-  background-color: #f9f906;
-  border: 2px solid #aeae04;
-}
-
 
 .pop-up {
   text-align: center;
+}
+
+.button-list {
+  display: flex;
+}
+
+button:hover, .button:hover, .pop-up-btn:hover, a:hover {
+  background-color: yellow;
+  cursor: pointer;
 }
