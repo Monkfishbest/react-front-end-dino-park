@@ -15,29 +15,31 @@ class DinosaurContainer extends Component {
 
   filterDinosaurs() {
     let dinoArray = this.state.listOfDinos;
-    console.log(dinoArray);
-
+    let filteredDinos = []
     for (let i = 0; i < dinoArray.length; i++) {
       let dino = dinoArray[i];
-      console.log(dino);
+      if (dino.paddock.name === this.state.paddockName) {
+        filteredDinos.push(dino);
+      }
     }
-
+    return filteredDinos
   }
 
   componentDidMount(){
     const url = 'http://localhost:8080/dinosaurs'
     fetch(url)
     .then(res => res.json())
-    .then(returnedDinos => this.setState({listOfDinos: returnedDinos, paddockName: this.props.match.params.paddock}, () => this.filterDinosaurs() ))
+    .then(returnedDinos => this.setState({listOfDinos: returnedDinos, paddockName: this.props.match.params.paddock}, () => this.filterDinosaurs()))
     .catch(err => console.error(err))
   }
 
   render() {
     return (
       <div className="paddock">
-        <DinosaurList listOfDinos={this.state.listOfDinos}/>
+        <h1>{this.state.paddockName} Paddock</h1>
+        <h2>Dinosaurs currently in paddock:</h2>
+        <DinosaurList listOfDinos={this.filterDinosaurs()}/>
         <div className="park-container">
-        <h1>hi</h1>
         </div>
       </div>
     );
