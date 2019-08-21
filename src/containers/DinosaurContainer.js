@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import DinosaurList from '../components/paddock_dino_container/DinosaurList';
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import RemoveDinosaurButton from '../components/buttons/RemoveDinosaurButton';
 import Emoji from '../components/Emoji';
 
