@@ -18,7 +18,7 @@ class About extends Component {
 
         <div className="about-card">
           <h4>John Patrick McNeill</h4>
-          <img alt="John McNeill" src={require('./images/John.jpg')}/>
+          <img alt="A stunnly handsome devil!" src={require('./images/John.jpg')}/>
           <br/>
           <a href="https://github.com/Monkfishbest">GitHub</a>
         </div>
