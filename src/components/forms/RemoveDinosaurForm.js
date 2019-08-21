@@ -8,7 +8,8 @@ class RemoveDinosaurForm extends Component {
       <div className="remove-dinosaur-form">
         <h2>Remove A Dinosaur:</h2>
         <form>
-          <RemoveDinosaurList dinosaurList={this.props.dinosaurList} />
+          <RemoveDinosaurList dinosaurList={this.props.dinosaurList}
+            onRemoveDinoClick={this.props.onRemoveDinoClick}/>
         </form>
       </div>
     )
