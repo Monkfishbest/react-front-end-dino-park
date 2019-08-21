@@ -15,14 +15,14 @@ class TransferDinosaurForm extends Component {
   }
 
   getHerbivoreList() {
-    return this.props.herbivoreList.map(herbivore => {
-      return(<option>{herbivore.name}</option>)
+    return this.props.herbivoreList.map((herbivore, index) => {
+      return(<option key={index}>{herbivore.name}</option>)
     });
   }
 
   getPaddockList() {
-    return this.props.paddockList.map(paddock => {
-      return(<option>{paddock.name}</option>)
+    return this.props.paddockList.map((paddock, index) => {
+      return(<option key={index}>{paddock.name}</option>)
     });
   }
 
@@ -37,8 +37,8 @@ class TransferDinosaurForm extends Component {
   handleTransferSubmit(event) {
     event.preventDefault();
     this.props.onTransferFormSubmit({
-      paddockName: this.state.paddockName,
-      paddockType: this.state.paddockType
+      dinosaur: this.state.selectedDinosaur,
+      paddock: this.state.selectedPaddock
     })
   }
 
@@ -46,12 +46,12 @@ class TransferDinosaurForm extends Component {
     return (
       <div>
         <form className="transfer-dino-form">
-          <select>
+          <select name="dino" onChange={this.handleDinosaurChange} value={this.state.selectedDinosaur}>
             <option selected disabled value="default">Select a Dinosaur</option>
             {this.getHerbivoreList()}
           </select>
 
-          <select>
+          <select name="paddock" onChange={this.handlePaddockChange} value={this.state.selectedPaddock}>
             <option selected disabled value="default">Select a Paddock</option>
             {this.getPaddockList()}
           </select>
