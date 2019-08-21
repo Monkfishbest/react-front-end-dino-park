@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import AddPaddockForm from '../forms/AddPaddockForm'
+import AddPaddockForm from '../forms/AddPaddockForm';
 import './Buttons.css';
 import Modal from 'react-awesome-modal';
+import Emoji from '../Emoji';
 
 class AddPaddockButton extends Component {
   constructor(props){
@@ -26,7 +27,7 @@ class AddPaddockButton extends Component {
   render() {
     return (
       <div className="add-paddock-button">
-      <button className="add-paddock-btn" type="button" value="add-paddock" onClick={() => this.openModal()} >Add a Paddock &#127795;</button>
+      <button className="add-paddock-btn" type="button" value="add-paddock" onClick={() => this.openModal()} >Add a Paddock <Emoji symbol="🌳" label="deciduous tree"/></button>
         <Modal visible={this.state.visible} width="55%" height="55%" onClickAway={() => this.closeModal()}>
           <AddPaddockForm onAddPaddockFormSubmit={this.props.onAddPaddockFormSubmit}/>
         </Modal>

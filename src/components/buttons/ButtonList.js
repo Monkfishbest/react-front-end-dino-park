@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import TransferButton from "./TransferButton"
-import AddDinosaurButton from "./AddDinosaurButton"
-import RemoveDinosaurButton from "./RemoveDinosaurButton"
-import AddPaddockButton from "./AddPaddockButton"
-import FeedButton from "./FeedButton"
+import TransferButton from "./TransferButton";
+import AddDinosaurButton from "./AddDinosaurButton";
+import RemoveDinosaurButton from "./RemoveDinosaurButton";
+import AddPaddockButton from "./AddPaddockButton";
+import FeedButton from "./FeedButton";
 import './Buttons.css';
 
 class ButtonList extends Component {
