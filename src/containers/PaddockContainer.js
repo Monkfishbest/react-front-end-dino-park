@@ -43,8 +43,13 @@ class PaddockContainer extends Component {
     });
   }
 
-  handleTransferFormSubmit({dinosaur, paddock}) {
-    console.log('Transfer Set Up')
+  handleTransferFormSubmit({dinosaurName, paddockName}) {
+    const paddock = this.findPaddock(paddockName);
+    const dinosaur = this.findDinosaur(dinosaurName);
+    dinosaur.paddock = paddock;
+    console.log(dinosaur);
+    const request = new Request();
+    request.update('/herbivores/' + dinosaur.id, dinosaur);
   }
 
   handleAddDinosaurFormSubmit({newDino}) {
@@ -53,14 +58,18 @@ class PaddockContainer extends Component {
     )
   }
 
-  findPaddock() {
-    const paddockName = this.state.newDino.paddock;
-    const paddock = this.state.listOfPaddocks.find(paddock => {return paddock.name === paddockName})
+  findPaddock(name) {
+    const paddock = this.state.listOfPaddocks.find(paddock => {return paddock.name === name})
     return paddock;
   }
 
+  findDinosaur(name) {
+    const dinosaur = this.state.listOfHerbivores.find(dinosaur => {return dinosaur.name === name})
+    return dinosaur;
+  }
+
   constructAddDinoPayload() {
-    const paddock = this.findPaddock();
+    const paddock = this.findPaddock(this.state.newDino.paddock);
     const dinoCopy = this.state.newDino
     dinoCopy.paddock = paddock;
     this.setState({newDino: dinoCopy});

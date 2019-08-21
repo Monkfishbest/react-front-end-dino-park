@@ -37,15 +37,15 @@ class TransferDinosaurForm extends Component {
   handleTransferSubmit(event) {
     event.preventDefault();
     this.props.onTransferFormSubmit({
-      dinosaur: this.state.selectedDinosaur,
-      paddock: this.state.selectedPaddock
+      dinosaurName: this.state.selectedDinosaur,
+      paddockName: this.state.selectedPaddock
     });
   }
 
   render() {
     return (
       <div>
-        <form className="transfer-dino-form">
+        <form className="transfer-dino-form" onSubmit={this.handleTransferSubmit}>
           <select name="dino" onChange={this.handleDinosaurChange} value={this.state.selectedDinosaur}>
             <option disabled value="">Select a Dinosaur</option>
             {this.getHerbivoreList()}
