@@ -10,6 +10,7 @@ class PaddockContainer extends Component {
     super(props);
     this.state = {
       listOfPaddocks: [],
+      listOfHerbivorePaddocks: [],
       listOfHerbivores: [],
       newDino: {},
       listOfDinosaurs: [],
@@ -31,10 +32,14 @@ class PaddockContainer extends Component {
     const dinoRequest = new Request();
     dinoRequest.get("/dinosaurs")
     .then(returnedDinosaurs => this.setState({listOfDinosaurs: returnedDinosaurs}))
+    .catch(err => console.error(err))
 
     request.get("/herbivores")
     .then(herbivores => this.setState({listOfHerbivores: herbivores}))
+    .catch(err => console.error(err))
 
+    request.get("/paddocks/herbivores")
+    .then(returnedPaddocks => this.setState({listOfHerbivorePaddocks: returnedPaddocks}))
     .catch(err => console.error(err))
   }
 
@@ -116,14 +121,13 @@ class PaddockContainer extends Component {
   render(){
     return (
       <div className="paddock-container">
-        <div className="park">
-          <PaddockList paddockList={this.state.listOfPaddocks}/>
-          <ButtonList paddockList={this.state.listOfPaddocks}
-          dinosaurList={this.state.listOfDinosaurs}
-          herbivoreList={this.state.listOfHerbivores}
-          onAddPaddockFormSubmit={this.handleAddPaddockFormSubmit} onTransferFormSubmit={this.handleTransferFormSubmit} onAddDinosaurFormSubmit={this.handleAddDinosaurFormSubmit}
-          onRemoveDinoClick={this.handleRemoveDinoClick}/>
-        </div>
+        <PaddockList paddockList={this.state.listOfPaddocks}/>
+        <ButtonList paddockList={this.state.listOfPaddocks}
+        herbivorePaddockList={this.state.listOfHerbivorePaddocks}
+        dinosaurList={this.state.listOfDinosaurs}
+        herbivoreList={this.state.listOfHerbivores}
+        onAddPaddockFormSubmit={this.handleAddPaddockFormSubmit} onTransferFormSubmit={this.handleTransferFormSubmit} onAddDinosaurFormSubmit={this.handleAddDinosaurFormSubmit}
+        onRemoveDinoClick={this.handleRemoveDinoClick}/>
       </div>
     )
   }

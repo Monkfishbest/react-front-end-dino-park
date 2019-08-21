@@ -12,7 +12,7 @@ class ButtonList extends Component {
     return (
       <div className="button-list">
         <TransferButton onTransferFormSubmit={this.props.onTransferFormSubmit}
-        paddockList={this.props.paddockList}
+        paddockList={this.props.herbivorePaddockList}
         herbivoreList={this.props.herbivoreList}/>
         <AddDinosaurButton paddockList={this.props.paddockList} onAddDinosaurFormSubmit={this.props.onAddDinosaurFormSubmit}/>
         <RemoveDinosaurButton dinosaurList={this.props.dinosaurList}
