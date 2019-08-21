@@ -1,0 +1,30 @@
+.paddock-list-item a {
+  background-color: red;
+   box-shadow: 0 7px 0 darkred;
+   color: white;
+   padding: 1em;
+   position: relative;
+   text-decoration: none;
+   border-radius: 50px;
+   text-transform: uppercase;
+  }
+
+
+.paddock-list {
+  display: flex;
+  margin: 1em;
+  padding: 1em;
+  flex-wrap: wrap;
+  height: 9em;
+  margin-bottom: 1px;
+}
+
+.paddock-list-item a:hover {
+  background-color: yellow;
+  cursor: pointer;
+}
+
+.paddock-list-item a:active {
+  box-shadow: none;
+  top: 5px;
+}
