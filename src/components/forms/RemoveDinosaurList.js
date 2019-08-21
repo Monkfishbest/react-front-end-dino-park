@@ -1,5 +1,6 @@
 import React from "react";
 import RemoveDinosaurListItem from './RemoveDinosaurListItem'
+import './RemoveDinosaurList.css'
 
 const RemoveDinosaurList = (props) => {
   const dinosaurNodes = props.dinosaurList.map((dinosaur, index) => {
