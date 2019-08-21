@@ -20,7 +20,7 @@ class AddDinosaurButton extends Component {
       return (
         <div className="add-dinosaur-button">
         <button type="button" value="add-dinosaur" onClick={this.handleButtonClick}>Add A Dinosaur</button>
-        <AddDinosaurForm onAddDinosaurFormSubmit={this.props.onAddDinosaurFormSubmit}/>
+        <AddDinosaurForm paddockList={this.props.paddockList} onAddDinosaurFormSubmit={this.props.onAddDinosaurFormSubmit}/>
         </div>
       );
     } else {

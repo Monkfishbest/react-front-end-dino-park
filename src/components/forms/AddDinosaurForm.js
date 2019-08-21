@@ -19,6 +19,7 @@ class AddDinosaurForm extends Component {
     this.handlePaddockChange = this.handlePaddockChange.bind(this);
     this.handleAddDinosaurFormSubmit = this.handleAddDinosaurFormSubmit.bind(this);
     this.getDinosaurByDietType = this.getDinosaurByDietType.bind(this);
+    this.getPaddocks = this.getPaddocks.bind(this);
   }
 
   handleNameChange(event){
@@ -70,6 +71,17 @@ class AddDinosaurForm extends Component {
       </Fragment>
     )
   }
+  getPaddocks(){
+    let arrayOfPaddocks
+    if (this.props.paddockList !== undefined){
+      console.log("paddock list in getPaddocks", this.props.paddockList)
+      arrayOfPaddocks = this.props.paddockList.map((paddock, index) => {
+      return <option key={index} value={paddock.name}>{paddock.name}</option>
+    })
+    return arrayOfPaddocks
+  }
+  console.log("arrayOfPaddocks", arrayOfPaddocks)
+}
 
 
   render() {
@@ -94,9 +106,7 @@ class AddDinosaurForm extends Component {
       <br/>
       <label>Paddock:</label>
       <select name="paddock" onChange={this.handlePaddockChange} value={this.state.paddock}>
-      <option value="Hammond">Hammond</option>
-      <option value="Grant">Grant</option>
-      <option value="Muldoon">Muldoon</option>
+      {this.getPaddocks()}
       </select>
       <br/>
       <input type="submit" value="Add Dinosaur"/>

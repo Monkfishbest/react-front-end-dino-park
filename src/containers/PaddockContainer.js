@@ -68,7 +68,8 @@ class PaddockContainer extends Component {
       return (
         <div className="PaddockContainer">
         <PaddockList paddockList={this.state.listOfPaddocks}/>
-        <ButtonList onAddPaddockFormSubmit={this.handleAddPaddockFormSubmit} onAddDinosaurFormSubmit={this.handleAddDinosaurFormSubmit}/>
+
+        <ButtonList paddockList={this.state.listOfPaddocks} onAddPaddockFormSubmit={this.handleAddPaddockFormSubmit} onAddDinosaurFormSubmit={this.handleAddDinosaurFormSubmit}/>
         </div>
       )
 
