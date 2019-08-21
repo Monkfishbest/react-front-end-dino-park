@@ -28,7 +28,9 @@ class TransferButton extends Component {
       <div className="transfer-button">
         <button className="transfer-btn" type="button" value="transfer" onClick={() => this.openModal()}>Transfer a Dinosaur &#129429;</button>
           <Modal visible={this.state.visible} width="55%" height="55%" onClickAway={() => this.closeModal()}>
-            <TransferDinosaurForm onTransferDinosaurFormSubmit={this.props.onTransferDinosaurFormSubmit}/>
+            <TransferDinosaurForm onTransferFormSubmit={this.props.onTransferFormSubmit}
+            paddockList={this.props.paddockList}
+            herbivoreList={this.props.herbivoreList}/>
           </Modal>
       </div>
     )

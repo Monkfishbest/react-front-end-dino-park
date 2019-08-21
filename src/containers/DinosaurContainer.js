@@ -1,21 +1,37 @@
 import React, { Component } from "react";
 import DinosaurList from '../components/paddock_dino_container/DinosaurList';
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import RemoveDinosaurButton from '../components/buttons/RemoveDinosaurButton';
 
 class DinosaurContainer extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      listOfDinos: []
+      listOfDinos: [],
+      paddockName: "",
+      filteredDinos: []
     }
+    this.filterDinosaurs = this.filterDinosaurs.bind(this)
+  }
+
+  filterDinosaurs() {
+    let dinoArray = this.state.listOfDinos;
+    let filteredDinos = []
+    for (let i = 0; i < dinoArray.length; i++) {
+      let dino = dinoArray[i];
+      if (dino.paddock.name === this.state.paddockName) {
+        filteredDinos.push(dino);
+      }
+    }
+    return filteredDinos
   }
 
   componentDidMount(){
     const url = 'http://localhost:8080/dinosaurs'
     fetch(url)
     .then(res => res.json())
-    .then(returnedDinos => this.setState({listOfDinos: returnedDinos}))
+    .then(returnedDinos => this.setState({listOfDinos: returnedDinos, paddockName: this.props.match.params.paddock}, () => this.filterDinosaurs()))
     .catch(err => console.error(err))
   }
 
@@ -23,9 +39,11 @@ class DinosaurContainer extends Component {
     return (
       <div className="paddock">
         <span>&#127795;</span>
-        <DinosaurList listOfDinos={this.state.listOfDinos}/>
+        <h1>{this.state.paddockName} Paddock</h1>
+        <h2>Dinosaurs currently in paddock:</h2>
+        <DinosaurList listOfDinos={this.filterDinosaurs()}/>
         <div className="park-container">
-        <h1>hi</h1>
+        <RemoveDinosaurButton />
         </div>
       </div>
     );

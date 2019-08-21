@@ -11,8 +11,10 @@ class ButtonList extends Component {
   render() {
     return (
       <div className="button-list">
-        <TransferButton onTransferFormSubmit={this.props.onTransferFormSubmit}/>
-        <AddDinosaurButton onAddDinosaurFormSubmit={this.props.onAddDinosaurFormSubmit}/>
+        <TransferButton onTransferFormSubmit={this.props.onTransferFormSubmit}
+        paddockList={this.props.paddockList}
+        herbivoreList={this.props.herbivoreList}/>
+        <AddDinosaurButton paddockList={this.props.paddockList} onAddDinosaurFormSubmit={this.props.onAddDinosaurFormSubmit}/>
         <RemoveDinosaurButton dinosaurList={this.props.dinosaurList}
           onRemoveDinoClick={this.props.onRemoveDinoClick}/>
         <AddPaddockButton onAddPaddockFormSubmit={this.props.onAddPaddockFormSubmit} />
