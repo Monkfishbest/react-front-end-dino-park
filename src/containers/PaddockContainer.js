@@ -10,12 +10,14 @@ class PaddockContainer extends Component {
     this.state = {
       listOfPaddocks: [],
       newDino: {},
-      listOfDinosaurs: []
+      listOfDinosaurs: [],
+      dinoToRemove: {}
     };
     this.handleAddPaddockFormSubmit = this.handleAddPaddockFormSubmit.bind(this);
     this.handleTransferFormSubmit = this.handleTransferFormSubmit.bind(this);
     this.handleAddDinosaurFormSubmit = this.handleAddDinosaurFormSubmit.bind(this);
     this.setupAndPostNewDino = this.setupAndPostNewDino.bind(this);
+    this.handleRemoveDinoClick = this.handleRemoveDinoClick.bind(this);
   }
 
   componentDidMount(){
@@ -71,11 +73,15 @@ class PaddockContainer extends Component {
       request.post('/herbivores', this.state.newDino)
     }
 
+  handleRemoveDinoClick() {
+    console.log("About to delete a dinosaur with id: ", this.state.dinoToRemove.id)
+  }
+
     render(){
       return (
         <div className="PaddockContainer">
         <PaddockList paddockList={this.state.listOfPaddocks}/>
-        <ButtonList dinosaurList={this.state.listOfDinosaurs} onAddPaddockFormSubmit={this.handleAddPaddockFormSubmit} onTransferFormSubmit={this.handleTransferSubmit} onAddDinosaurFormSubmit={this.handleAddDinosaurFormSubmit}/>
+        <ButtonList dinosaurList={this.state.listOfDinosaurs} onAddPaddockFormSubmit={this.handleAddPaddockFormSubmit} onTransferFormSubmit={this.handleTransferSubmit} onAddDinosaurFormSubmit={this.handleAddDinosaurFormSubmit} onRemoveDinoClick={this.handleRemoveDinoClick}/>
         </div>
       )
     }
