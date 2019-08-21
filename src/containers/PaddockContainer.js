@@ -11,7 +11,7 @@ class PaddockContainer extends Component {
       listOfPaddocks: [],
       newDino: {},
       listOfDinosaurs: [],
-      dinoToRemove: {}
+      dinoToRemove: ''
     };
     this.handleAddPaddockFormSubmit = this.handleAddPaddockFormSubmit.bind(this);
     this.handleTransferFormSubmit = this.handleTransferFormSubmit.bind(this);
@@ -73,8 +73,9 @@ class PaddockContainer extends Component {
       request.post('/herbivores', this.state.newDino)
     }
 
-  handleRemoveDinoClick() {
-    console.log("About to delete a dinosaur with id: ", this.state.dinoToRemove.id)
+  handleRemoveDinoClick(dinoToRemove) {
+    this.setState({dinoToRemove: dinoToRemove});
+
   }
 
     render(){
