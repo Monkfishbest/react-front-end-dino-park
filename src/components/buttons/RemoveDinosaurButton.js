@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import './Buttons.css';
 import Modal from 'react-awesome-modal';
-import RemoveDinosaurForm from '../forms/RemoveDinosaurForm'
+import RemoveDinosaurForm from '../forms/RemoveDinosaurForm';
+import Emoji from '../Emoji';
 
 class RemoveDinosaurButton extends Component {
   constructor(props){
@@ -27,7 +28,7 @@ class RemoveDinosaurButton extends Component {
   render() {
     return (
       <div className="remove-dinosaur-button">
-        <button className="remove-dinosaur-btn" type="button" value="remove-dinosaur" onClick={() => this.openModal()}>Remove a Dinosaur &#129430;</button>
+        <button className="remove-dinosaur-btn" type="button" value="remove-dinosaur" onClick={() => this.openModal()}>Remove a Dinosaur <Emoji symbol="🦖" label="T-Rex"/></button>
           <Modal visible={this.state.visible} width="55%" height="55%" onClickAway={() => this.closeModal()}>
             <RemoveDinosaurForm dinosaurList={this.props.dinosaurList}
               onRemoveDinoClick={this.props.onRemoveDinoClick}/>
