@@ -103,8 +103,11 @@ class PaddockContainer extends Component {
     console.log("name to remove passed back:", dinoName);
     const dinoToDelete = this.findFromAllDinosaur(dinoName);
     const request = new Request();
-    request.delete('/dinosaurs/' + dinoToDelete.id)
-  }
+    request.delete('/dinosaurs/' + dinoToDelete.id).then(() => {
+      window.location = '/park-map' });
+    }
+
+
 
   handleRemoveDinoClick(dinoToRemove) {
     this.setState({dinoToRemove: dinoToRemove}, () => this.removeDino(this.state.dinoToRemove));
