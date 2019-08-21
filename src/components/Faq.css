@@ -1,7 +1,29 @@
-.about {
+.faq {
   text-align: center;
+  background-color: white;
+  max-width: 800px;
+  opacity: 0.9;
+  border-radius: 5px;
+  margin-left: 20px;
 }
 
-.about h1 {
-  color: rgba(0, 0, 0, 0.1)
+.q-and-a {
+  background-color: #cce6ff;
+  max-width: 800px;
+  opacity: 0.9;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 10px;
+}
+
+.faq h1 {
+  color: rgba(0, 0, 0, 0.2)
+}
+
+.faq h3 {
+  color: black;
+}
+
+.faq h4 {
+  color: black;
 }
