@@ -13,7 +13,8 @@ class DinosaurContainer extends Component {
       paddockName: "",
       filteredDinos: []
     }
-    this.filterDinosaurs = this.filterDinosaurs.bind(this)
+    this.filterDinosaurs = this.filterDinosaurs.bind(this);
+    this.textToRender = this.textToRender.bind(this);
   }
 
   filterDinosaurs() {
@@ -32,8 +33,16 @@ class DinosaurContainer extends Component {
     const url = 'http://localhost:8080/dinosaurs'
     fetch(url)
     .then(res => res.json())
-    .then(returnedDinos => this.setState({listOfDinos: returnedDinos, paddockName: this.props.match.params.paddock}, () => this.filterDinosaurs()))
+    .then(returnedDinos => this.setState({listOfDinos: returnedDinos, paddockName: this.props.match.params.paddock}, () => this.setState({filteredDinos: this.filterDinosaurs()})))
     .catch(err => console.error(err))
+  }
+
+  textToRender() {
+    if(this.state.filteredDinos.length > 0) {
+      return <h2>Dinosaurs currently in paddock:</h2>
+    } else {
+      return <h2>No dinosaurs are in this paddock</h2>
+    }
   }
 
   render() {
@@ -42,7 +51,7 @@ class DinosaurContainer extends Component {
         <Emoji symbol="🌳" label="deciduous tree"/>
         <div className="text">
           <h1>{this.state.paddockName} Paddock</h1>
-          <h2>Dinosaurs currently in paddock:</h2>
+          {this.textToRender()}
           <DinosaurList listOfDinos={this.filterDinosaurs()}/>
         </div>
         <div className="remove">

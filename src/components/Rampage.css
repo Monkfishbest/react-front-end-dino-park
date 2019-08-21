@@ -1,0 +1,30 @@
+.rampage-btn {
+  margin: auto;
+  display: block;
+  margin-top: 100px;
+  background-color: red;
+  color:black;
+  padding: 30px;
+  padding-bottom: 70px;
+}
+
+.panic-over-btn {
+  color: darkblue;
+  background-color: lightblue;
+  border-width: 4px;
+  border-style: solid;
+  border-color: darkblue;
+  height: 300px;
+  width: 300px;
+  font-weight: bold;
+}
+
+.modal-contents {
+  text-align: center;
+  background-color: red;
+}
+
+.panic-over-btn-div {
+  display: inline-block;
+  background-color: red;
+}

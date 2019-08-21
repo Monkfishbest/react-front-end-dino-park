@@ -16,6 +16,9 @@ const NavBar = () => (
     <li>
       <Link to="FAQ">FAQ</Link>
     </li>
+    <li>
+      <Link className="red" to="rampage">RAMPAGE!</Link>
+    </li>
   </ul>
 )
 
