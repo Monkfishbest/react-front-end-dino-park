@@ -1,3 +1,8 @@
+.button-modal-wrapper {
+  height: 55vh;
+  width: 55vw;
+}
+
 button, .button, .pop-up-btn {
   font-family: 'Quicksand', sans-serif;
   height: 50px;

@@ -1,3 +1,9 @@
+.paddock-list-item {
+  margin-bottom: 15px;
+  flex: 1;
+  text-align: center;
+}
+
 .paddock-list-item a {
   background-color: #29a329;
   box-shadow: 0 7px 0 #1f7a1f;
@@ -5,22 +11,19 @@
   padding: 1em;
   text-decoration: none;
   border-radius: 10px;
-  text-transform: uppercase;
+  font-size: 30px;
+  display: block;
   }
 
 .paddock-list {
   display: flex;
   padding: 1em;
+  /* margin-top: 200px; */
   flex-wrap: wrap;
-  height: 9em;
+  min-height: 10em;
 }
 
 .paddock-list-item a:hover {
   background-color: yellow;
   cursor: pointer;
-}
-
-.paddock-list-item a:active {
-  box-shadow: none;
-  top: 5px;
 }

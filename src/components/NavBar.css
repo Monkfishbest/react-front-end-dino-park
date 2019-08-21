@@ -5,6 +5,8 @@
   line-height: 50px;
   padding-left: 1px;
   margin: 0px 0px;
+  position: relative;
+  z-index: 99999;
 }
 
 .white {
