@@ -1,3 +1,14 @@
 .home-page {
+  background-image: url('./images/front_gate.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
   text-align: center;
+}
+
+.title h4 {
+  margin-top: 0;
+  padding-top: 2em;
 }
