@@ -39,7 +39,7 @@ class TransferDinosaurForm extends Component {
     this.props.onTransferFormSubmit({
       dinosaur: this.state.selectedDinosaur,
       paddock: this.state.selectedPaddock
-    })
+    });
   }
 
   render() {
@@ -47,12 +47,12 @@ class TransferDinosaurForm extends Component {
       <div>
         <form className="transfer-dino-form">
           <select name="dino" onChange={this.handleDinosaurChange} value={this.state.selectedDinosaur}>
-            <option selected disabled value="default">Select a Dinosaur</option>
+            <option disabled value="">Select a Dinosaur</option>
             {this.getHerbivoreList()}
           </select>
 
           <select name="paddock" onChange={this.handlePaddockChange} value={this.state.selectedPaddock}>
-            <option selected disabled value="default">Select a Paddock</option>
+            <option disabled value="">Select a Paddock</option>
             {this.getPaddockList()}
           </select>
 
