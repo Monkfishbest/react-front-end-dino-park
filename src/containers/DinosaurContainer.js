@@ -43,7 +43,7 @@ class DinosaurContainer extends Component {
         <h2>Dinosaurs currently in paddock:</h2>
         <DinosaurList listOfDinos={this.filterDinosaurs()}/>
         <div className="park-container">
-        <RemoveDinosaurButton />
+        <RemoveDinosaurButton dinosaurList={this.state.listOfDinos}/>
         </div>
       </div>
     );
