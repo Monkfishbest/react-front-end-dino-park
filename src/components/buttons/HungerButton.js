@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Request from '../../helpers/Request';
 
 class HungerButton extends Component {
   constructor(props) {
@@ -7,10 +8,12 @@ class HungerButton extends Component {
   }
 
   handleClick() {
-    fetch("/herbivores/hunger")
+    const request = new Request();
+
+    request.get("/herbivores/hunger")
     .catch(err => console.error(err));
 
-    fetch("/carnivores/hunger")
+    request.get("/carnivores/hunger")
     .catch(err => console.error(err));
   }
 
@@ -20,3 +23,5 @@ class HungerButton extends Component {
     )
   }
 }
+
+export default HungerButton;

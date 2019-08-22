@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import HungerButton from './buttons/HungerButton';
 import './NavBar.css';
 
 const NavBar = () => (
@@ -18,6 +19,9 @@ const NavBar = () => (
     </li>
     <li>
       <Link className="red" to="rampage">RAMPAGE!</Link>
+    </li>
+    <li>
+      <HungerButton />
     </li>
   </ul>
 )
