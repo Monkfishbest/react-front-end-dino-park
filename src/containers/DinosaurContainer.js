@@ -3,6 +3,7 @@ import DinosaurList from '../components/paddock_dino_container/DinosaurList';
 import RemoveDinosaurButton from '../components/buttons/RemoveDinosaurButton';
 import Emoji from '../components/Emoji';
 import './DinosaurContainer.css';
+import Request from '../helpers/Request';
 
 class DinosaurContainer extends Component {
 
@@ -15,6 +16,7 @@ class DinosaurContainer extends Component {
     }
     this.filterDinosaurs = this.filterDinosaurs.bind(this);
     this.textToRender = this.textToRender.bind(this);
+    this.handleRemoveDinoClick = this.handleRemoveDinoClick.bind(this);
   }
 
   filterDinosaurs() {
@@ -45,6 +47,23 @@ class DinosaurContainer extends Component {
     }
   }
 
+  findFromAllDinosaur(name) {
+    const dinosaur = this.state.listOfDinos.find(dinosaur => {return dinosaur.name === name})
+    return dinosaur;
+  }
+
+  removeDino(dinoName) {
+    const dinoToDelete = this.findFromAllDinosaur(dinoName);
+    const request = new Request();
+    request.delete('/dinosaurs/' + dinoToDelete.id).then(() => {
+      window.location = '/park-map'
+    });
+  }
+
+  handleRemoveDinoClick(dinoToRemove) {
+    this.setState({dinoToRemove: dinoToRemove}, () => this.removeDino(this.state.dinoToRemove));
+  }
+
   render() {
     return (
       <div className="paddock">
@@ -55,7 +74,8 @@ class DinosaurContainer extends Component {
           <DinosaurList listOfDinos={this.filterDinosaurs()}/>
         </div>
         <div className="remove">
-        <RemoveDinosaurButton dinosaurList={this.state.listOfDinos}/>
+        <RemoveDinosaurButton dinosaurList={this.state.listOfDinos}
+          onRemoveDinoClick={this.handleRemoveDinoClick}/>
         </div>
       </div>
     );
